@@ -15,6 +15,8 @@ const fadeIn = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
+const base = import.meta.env.BASE_URL;
+
 function App() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
@@ -44,7 +46,7 @@ function App() {
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <img src="/orring-logo.png" alt="Orring" className="hero-logo" />
+          <img src={`${base}orring-logo.png`} alt="Orring" className="hero-logo" />
         </motion.div>
 
         <motion.h1
@@ -67,7 +69,7 @@ function App() {
         </motion.p>
 
         <motion.a
-          href="/Orring.apk"
+          href={`${base}Orring.apk`}
           download
           className="download-btn"
           initial={{ opacity: 0, y: 20 }}
@@ -184,14 +186,14 @@ function App() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <img src="/orring-logo.png" alt="Orring" className="cta-logo" />
+          <img src={`${base}orring-logo.png`} alt="Orring" className="cta-logo" />
           <h2>Prête à simplifier ton suivi ?</h2>
           <p>
             Orring est un projet personnel, fait avec amour.<br />
             Gratuit pour toujours, sans pub, sans tracking.
           </p>
           <motion.a
-            href="/Orring.apk"
+            href={`${base}Orring.apk`}
             download
             className="download-btn cta-btn"
             whileHover={{ scale: 1.05 }}
