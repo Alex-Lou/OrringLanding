@@ -44,7 +44,7 @@ function App() {
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          💍
+          <img src="/orring-logo.png" alt="Orring" className="hero-logo" />
         </motion.div>
 
         <motion.h1
@@ -53,7 +53,7 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          My Ring
+          Orring
         </motion.h1>
 
         <motion.p
@@ -67,7 +67,7 @@ function App() {
         </motion.p>
 
         <motion.a
-          href="/MyRing.apk"
+          href="/Orring.apk"
           download
           className="download-btn"
           initial={{ opacity: 0, y: 20 }}
@@ -156,7 +156,7 @@ function App() {
           {[
             { num: '1', title: 'Installe', desc: 'Télécharge l\'APK et installe-la sur ton Android.' },
             { num: '2', title: 'Configure', desc: 'Indique quand tu as mis ton anneau — aujourd\'hui ou une date antérieure.' },
-            { num: '3', title: 'C\'est tout !', desc: 'My Ring calcule tout : retrait, pause, prochaine insertion. Tu reçois des rappels automatiques.' },
+            { num: '3', title: 'C\'est tout !', desc: 'Orring calcule tout : retrait, pause, prochaine insertion. Tu reçois des rappels automatiques.' },
           ].map((step, i) => (
             <motion.div
               key={i}
@@ -184,27 +184,27 @@ function App() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <span className="cta-emoji">💍</span>
+          <img src="/orring-logo.png" alt="Orring" className="cta-logo" />
           <h2>Prête à simplifier ton suivi ?</h2>
           <p>
-            My Ring est un projet personnel, fait avec amour.<br />
+            Orring est un projet personnel, fait avec amour.<br />
             Gratuit pour toujours, sans pub, sans tracking.
           </p>
           <motion.a
-            href="/MyRing.apk"
+            href="/Orring.apk"
             download
             className="download-btn cta-btn"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
-            📲 Télécharger My Ring
+            📲 Télécharger Orring
           </motion.a>
         </motion.div>
       </section>
 
       {/* Footer */}
       <footer className="footer">
-        <p>My Ring — Fait avec ❤️</p>
+        <p>Orring — Fait avec ❤️</p>
         <p className="footer-small">Aucune donnée collectée • 100% local</p>
       </footer>
     </div>
