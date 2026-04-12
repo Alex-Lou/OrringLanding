@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import './App.css';
 
 // ─── i18n translations ───
@@ -37,6 +37,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'Télécharger Orring',
     footer: 'Fait avec ❤️',
     footerSub: 'Aucune donnée collectée • 100% local',
+    toast: 'Téléchargement lancé ! Vérifie tes notifications ou ton dossier Téléchargements.',
+    installTitle: 'Installation facile',
+    installP1: "Comme Orring n'est pas sur le Play Store, Android affiche un message de sécurité — c'est normal pour toute application téléchargée directement.",
+    installStep1: 'Ouvre le fichier téléchargé',
+    installStep2: "Autorise l'installation depuis cette source",
+    installStep3: "Si ton téléphone propose un scan, accepte ou ignore — l'app est 100% sûre",
+    installStep4: 'Installe et profite !',
+    installNote: "Le code source est ouvert et vérifiable. Aucune donnée n'est collectée ni envoyée.",
   },
   en: {
     heroSub: 'Your companion to track your contraceptive ring,\nsimply and with peace of mind.',
@@ -58,6 +66,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'Download Orring',
     footer: 'Made with ❤️',
     footerSub: 'No data collected • 100% local',
+    toast: 'Download started! Check your notifications or Downloads folder.',
+    installTitle: 'Easy installation',
+    installP1: "Since Orring isn't on the Play Store, Android shows a security warning — this is normal for any directly downloaded app.",
+    installStep1: 'Open the downloaded file',
+    installStep2: 'Allow installation from this source',
+    installStep3: "If your phone offers a scan, accept or skip — the app is 100% safe",
+    installStep4: 'Install and enjoy!',
+    installNote: 'The source code is open and verifiable. No data is collected or sent.',
   },
   es: {
     heroSub: 'Tu compañera para seguir tu anillo anticonceptivo,\nde forma sencilla y con tranquilidad.',
@@ -79,6 +95,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'Descargar Orring',
     footer: 'Hecho con ❤️',
     footerSub: 'Ningún dato recopilado • 100% local',
+    toast: 'Descarga iniciada. Revisa tus notificaciones o la carpeta Descargas.',
+    installTitle: 'Instalación fácil',
+    installP1: 'Como Orring no está en Play Store, Android muestra un aviso de seguridad — es normal para cualquier app descargada directamente.',
+    installStep1: 'Abre el archivo descargado',
+    installStep2: 'Permite la instalación desde esta fuente',
+    installStep3: 'Si tu teléfono ofrece un escaneo, acepta u omite — la app es 100% segura',
+    installStep4: '¡Instala y disfruta!',
+    installNote: 'El código fuente es abierto y verificable. No se recopila ni envía ningún dato.',
   },
   pt: {
     heroSub: 'Sua companheira para acompanhar seu anel contraceptivo,\nde forma simples e tranquila.',
@@ -100,6 +124,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'Baixar Orring',
     footer: 'Feito com ❤️',
     footerSub: 'Nenhum dado coletado • 100% local',
+    toast: 'Download iniciado! Verifique suas notificações ou a pasta Downloads.',
+    installTitle: 'Instalação fácil',
+    installP1: 'Como o Orring não está na Play Store, o Android exibe um aviso de segurança — é normal para qualquer app baixado diretamente.',
+    installStep1: 'Abra o arquivo baixado',
+    installStep2: 'Permita a instalação desta fonte',
+    installStep3: 'Se seu celular oferecer um scan, aceite ou pule — o app é 100% seguro',
+    installStep4: 'Instale e aproveite!',
+    installNote: 'O código-fonte é aberto e verificável. Nenhum dado é coletado ou enviado.',
   },
   de: {
     heroSub: 'Dein Begleiter zur Verfolgung deines Verhütungsrings,\neinfach und mit Gelassenheit.',
@@ -121,6 +153,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'Orring herunterladen',
     footer: 'Mit ❤️ gemacht',
     footerSub: 'Keine Daten gesammelt • 100% lokal',
+    toast: 'Download gestartet! Prüfe deine Benachrichtigungen oder den Download-Ordner.',
+    installTitle: 'Einfache Installation',
+    installP1: 'Da Orring nicht im Play Store ist, zeigt Android eine Sicherheitswarnung — das ist normal für direkt heruntergeladene Apps.',
+    installStep1: 'Öffne die heruntergeladene Datei',
+    installStep2: 'Erlaube die Installation aus dieser Quelle',
+    installStep3: 'Wenn dein Handy einen Scan anbietet, akzeptiere oder überspringe — die App ist 100% sicher',
+    installStep4: 'Installiere und genieße!',
+    installNote: 'Der Quellcode ist offen und überprüfbar. Es werden keine Daten gesammelt oder gesendet.',
   },
   ar: {
     heroSub: 'رفيقتك لمتابعة حلقتك المانعة للحمل،\nببساطة وبكل طمأنينة.',
@@ -142,6 +182,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'تحميل Orring',
     footer: 'صنع بـ ❤️',
     footerSub: 'لا بيانات مجموعة • محلي 100%',
+    toast: 'بدأ التحميل! تحققي من الإشعارات أو مجلد التنزيلات.',
+    installTitle: 'تثبيت سهل',
+    installP1: 'بما أن Orring ليس على متجر Play، يعرض أندرويد تحذيراً أمنياً — هذا طبيعي لأي تطبيق يتم تحميله مباشرة.',
+    installStep1: 'افتحي الملف المحمّل',
+    installStep2: 'اسمحي بالتثبيت من هذا المصدر',
+    installStep3: 'إذا عرض هاتفك فحصاً، اقبلي أو تخطي — التطبيق آمن 100%',
+    installStep4: 'ثبّتي واستمتعي!',
+    installNote: 'الكود المصدري مفتوح وقابل للتحقق. لا يتم جمع أو إرسال أي بيانات.',
   },
   zh: {
     heroSub: '你的避孕环追踪伴侣，\n简单又安心。',
@@ -163,6 +211,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: '下载 Orring',
     footer: '用 ❤️ 制作',
     footerSub: '不收集数据 • 100%本地',
+    toast: '下载已开始！请查看通知或下载文件夹。',
+    installTitle: '轻松安装',
+    installP1: '由于Orring不在Play商店，Android会显示安全提示——这对于直接下载的应用是正常的。',
+    installStep1: '打开已下载的文件',
+    installStep2: '允许从此来源安装',
+    installStep3: '如果手机提供扫描，接受或跳过——应用100%安全',
+    installStep4: '安装并享受！',
+    installNote: '源代码开放可验证。不收集或发送任何数据。',
   },
   ja: {
     heroSub: 'あなたの避妊リングを追跡するパートナー、\nシンプルで安心。',
@@ -184,6 +240,14 @@ const i18n: Record<LangCode, Record<string, string>> = {
     ctaBtn: 'Orringをダウンロード',
     footer: '❤️ で作りました',
     footerSub: 'データ収集なし • 100%ローカル',
+    toast: 'ダウンロード開始！通知またはダウンロードフォルダを確認してください。',
+    installTitle: '簡単インストール',
+    installP1: 'OrringはPlayストアにないため、Androidがセキュリティ警告を表示します——直接ダウンロードしたアプリでは正常です。',
+    installStep1: 'ダウンロードしたファイルを開く',
+    installStep2: 'このソースからのインストールを許可',
+    installStep3: 'スマホがスキャンを提案したら、承認またはスキップ——アプリは100%安全',
+    installStep4: 'インストールして楽しむ！',
+    installNote: 'ソースコードは公開・検証可能。データの収集・送信は一切ありません。',
   },
 };
 
@@ -243,18 +307,44 @@ function LangSelector({ lang, setLang }: { lang: LangCode; setLang: (l: LangCode
   );
 }
 
+// ─── Download Toast ───
+function DownloadToast({ message, visible }: { message: string; visible: boolean }) {
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className="download-toast"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.3 }}
+        >
+          <span>✅</span> {message}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 // ─── App ───
 function App() {
   const [lang, setLang] = useState<LangCode>('fr');
+  const [showToast, setShowToast] = useState(false);
   const t = useT(lang);
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const isRtl = lang === 'ar';
 
+  const handleDownload = () => {
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 5000);
+  };
+
   return (
     <div className="app" ref={ref} dir={isRtl ? 'rtl' : 'ltr'}>
       <LangSelector lang={lang} setLang={setLang} />
+      <DownloadToast message={t('toast')} visible={showToast} />
 
       {/* Floating particles */}
       <div className="particles">
@@ -288,7 +378,7 @@ function App() {
           {t('heroSub').split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
         </motion.p>
 
-        <motion.a href={`${base}Orring.apk`} download className="download-btn"
+        <motion.a href={`${base}Orring.apk`} download onClick={handleDownload} className="download-btn"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
           whileHover={{ scale: 1.05, boxShadow: '0 8px 40px rgba(248,180,200,0.4)' }}
           whileTap={{ scale: 0.97 }}
@@ -349,13 +439,32 @@ function App() {
         </div>
       </section>
 
+      {/* Installation help */}
+      <section className="install-help">
+        <motion.h2 className="section-title" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
+          🛡️ {t('installTitle')}
+        </motion.h2>
+        <motion.div className="install-card" variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <p className="install-intro">{t('installP1')}</p>
+          <div className="install-steps">
+            {(['installStep1', 'installStep2', 'installStep3', 'installStep4']).map((key, i) => (
+              <motion.div key={i} className="install-step" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={i}>
+                <span className="install-num">{i + 1}</span>
+                <span>{t(key)}</span>
+              </motion.div>
+            ))}
+          </div>
+          <p className="install-note">🔒 {t('installNote')}</p>
+        </motion.div>
+      </section>
+
       {/* CTA */}
       <section className="cta">
         <motion.div className="cta-card" variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <img src={`${base}orring-logo.png`} alt="Orring" className="cta-logo" />
           <h2>{t('ctaTitle')}</h2>
           <p>{t('ctaSub').split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}</p>
-          <motion.a href={`${base}Orring.apk`} download className="download-btn cta-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <motion.a href={`${base}Orring.apk`} download onClick={handleDownload} className="download-btn cta-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             📲 {t('ctaBtn')}
           </motion.a>
         </motion.div>
