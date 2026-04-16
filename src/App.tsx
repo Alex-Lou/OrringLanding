@@ -6,6 +6,7 @@ import './App.css';
 const LANGS = [
   { code: 'fr', flag: '🇫🇷', label: 'FR' },
   { code: 'en', flag: '🇬🇧', label: 'EN' },
+  { code: 'nl', flag: '🇳🇱', label: 'NL' },
   { code: 'es', flag: '🇪🇸', label: 'ES' },
   { code: 'pt', flag: '🇧🇷', label: 'PT' },
   { code: 'de', flag: '🇩🇪', label: 'DE' },
@@ -18,55 +19,64 @@ type LangCode = (typeof LANGS)[number]['code'];
 
 const i18n: Record<LangCode, Record<string, string>> = {
   fr: {
-    heroSub: 'Ton compagnon pour suivre ton anneau contraceptif,\nsimplement et en toute sérénité.',
+    heroSub: 'Un compagnon discret pour suivre ton anneau contraceptif,\nsimplement et en toute sérénité.',
     download: 'Télécharger gratuitement',
     hint: 'Android • 100% gratuit • Sans pub • Sans compte',
-    featuresTitle: 'Tout ce dont tu as besoin',
+    featuresTitle: "Tout ce qu'il faut, rien de plus",
     f1t: 'Rappels intelligents', f1d: 'Notifications J-7, J-1 et Jour J pour ne jamais oublier une insertion ou un retrait.',
     f2t: 'Calendrier visuel', f2d: "12 mois en un coup d'œil avec codes couleur. Chaque jour est tappable pour ajouter des notes.",
-    f3t: 'Suivi du cycle', f3d: 'Anneau animé avec countdown, suivi des règles et historique complet de tes cycles.',
-    f4t: 'Privé et local', f4d: 'Aucune donnée envoyée. Tout reste sur ton téléphone. Pas de compte, pas de serveur.',
-    f5t: 'Interface douce', f5d: 'Design rose poudré, animations fluides et navigation intuitive pensée pour toi.',
-    f6t: '100% gratuit', f6d: "Pas de pub, pas d'achat intégré, pas d'abonnement. Un cadeau, tout simplement.",
+    f3t: 'Suivi du cycle', f3d: "Anneau animé avec countdown, suivi des règles et historique complet des cycles.",
+    f4t: 'Privé et local', f4d: 'Aucune donnée envoyée. Tout reste sur le téléphone. Pas de compte, pas de serveur.',
+    f5t: 'Interface épurée', f5d: "Design doux, animations fluides et navigation intuitive, pensée pour aller à l'essentiel.",
+    f6t: '100% gratuit', f6d: "Pas de pub, pas d'achat intégré, pas d'abonnement. Un outil offert, simplement.",
     howTitle: 'Comment ça marche',
     s1t: 'Installe', s1d: "Télécharge l'APK et installe-la sur ton Android.",
-    s2t: 'Configure', s2d: "Indique quand tu as mis ton anneau — aujourd'hui ou une date antérieure.",
-    s3t: "C'est tout !", s3d: 'Orring calcule tout : retrait, pause, prochaine insertion. Tu reçois des rappels automatiques.',
-    ctaTitle: 'Prête à simplifier ton suivi ?',
-    ctaSub: 'Orring est un projet personnel, fait avec amour.\nGratuit pour toujours, sans pub, sans tracking.',
+    s2t: 'Configure', s2d: "Indique la date d'insertion de l'anneau — aujourd'hui ou une date antérieure.",
+    s3t: "C'est tout !", s3d: 'Orring calcule tout : retrait, pause, prochaine insertion. Les rappels arrivent automatiquement.',
+    ctaTitle: 'Prêt·e à simplifier ton suivi ?',
+    ctaSub: 'Orring est un projet personnel, fait avec soin.\nGratuit pour toujours, sans pub, sans tracking.',
     ctaBtn: 'Télécharger Orring',
     footer: 'Fait avec ❤️',
     footerSub: 'Aucune donnée collectée • 100% local',
-    toast: 'Téléchargement lancé ! Vérifie tes notifications ou ton dossier Téléchargements.',
+    toast: 'Merci pour ta confiance ! Téléchargement lancé — vérifie tes notifications ou ton dossier Téléchargements. 💜',
     installTitle: 'Installation facile',
     installP1: "Comme Orring n'est pas sur le Play Store, Android affiche un message de sécurité — c'est normal pour toute application téléchargée directement.",
     installStep1: 'Ouvre le fichier téléchargé',
     installStep2: "Autorise l'installation depuis cette source",
-    installStep3: "Si ton téléphone propose un scan, accepte ou ignore — l'app est 100% sûre",
+    installStep3: "Si le téléphone propose un scan, accepte ou ignore — l'app est 100% sûre",
     installStep4: 'Installe et profite !',
     installNote: "Le code source est ouvert et vérifiable. Aucune donnée n'est collectée ni envoyée.",
+    downloadsCount: 'téléchargements',
+    feedbackTitle: 'Laisse-nous un message',
+    feedbackSub: 'Suggestion, retour, ou simple mot de soutien — on lit tout. 💌',
+    feedbackName: 'Prénom ou pseudo (optionnel)',
+    feedbackEmail: 'Email (optionnel, pour une réponse)',
+    feedbackMessage: 'Ton message...',
+    feedbackSend: 'Envoyer',
+    feedbackThanks: 'Merci ! Message bien reçu. 💜',
+    feedbackError: "Oups, un souci est survenu. Réessaie ou écris directement à alex.guennad@gmail.com",
   },
   en: {
-    heroSub: 'Your companion to track your contraceptive ring,\nsimply and with peace of mind.',
+    heroSub: 'A quiet companion to track your contraceptive ring,\nsimply and with peace of mind.',
     download: 'Download for free',
     hint: 'Android • 100% free • No ads • No account',
-    featuresTitle: 'Everything you need',
+    featuresTitle: 'Everything you need, nothing more',
     f1t: 'Smart reminders', f1d: 'Notifications D-7, D-1 and D-Day so you never forget an insertion or removal.',
     f2t: 'Visual calendar', f2d: '12 months at a glance with color codes. Each day is tappable to add notes.',
     f3t: 'Cycle tracking', f3d: 'Animated ring with countdown, period tracking and full cycle history.',
-    f4t: 'Private & local', f4d: 'No data sent. Everything stays on your phone. No account, no server.',
-    f5t: 'Gentle interface', f5d: 'Soft pink design, smooth animations and intuitive navigation made for you.',
-    f6t: '100% free', f6d: 'No ads, no in-app purchase, no subscription. A gift, plain and simple.',
+    f4t: 'Private & local', f4d: 'No data sent. Everything stays on the phone. No account, no server.',
+    f5t: 'Clean interface', f5d: 'Soft design, smooth animations and intuitive navigation focused on the essentials.',
+    f6t: '100% free', f6d: 'No ads, no in-app purchase, no subscription. A tool offered freely.',
     howTitle: 'How it works',
     s1t: 'Install', s1d: 'Download the APK and install it on your Android.',
-    s2t: 'Configure', s2d: "Tell it when you inserted your ring — today or an earlier date.",
-    s3t: "That's it!", s3d: 'Orring calculates everything: removal, break, next insertion. You get automatic reminders.',
+    s2t: 'Configure', s2d: "Enter the ring insertion date — today or an earlier date.",
+    s3t: "That's it!", s3d: 'Orring calculates everything: removal, break, next insertion. Reminders arrive automatically.',
     ctaTitle: 'Ready to simplify your tracking?',
-    ctaSub: 'Orring is a personal project, made with love.\nFree forever, no ads, no tracking.',
+    ctaSub: 'Orring is a personal project, made with care.\nFree forever, no ads, no tracking.',
     ctaBtn: 'Download Orring',
     footer: 'Made with ❤️',
     footerSub: 'No data collected • 100% local',
-    toast: 'Download started! Check your notifications or Downloads folder.',
+    toast: 'Thank you for your trust! Download started — check your notifications or Downloads folder. 💜',
     installTitle: 'Easy installation',
     installP1: "Since Orring isn't on the Play Store, Android shows a security warning — this is normal for any directly downloaded app.",
     installStep1: 'Open the downloaded file',
@@ -74,6 +84,53 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: "If your phone offers a scan, accept or skip — the app is 100% safe",
     installStep4: 'Install and enjoy!',
     installNote: 'The source code is open and verifiable. No data is collected or sent.',
+    downloadsCount: 'downloads',
+    feedbackTitle: 'Leave a message',
+    feedbackSub: 'Suggestion, feedback, or a kind word — we read everything. 💌',
+    feedbackName: 'Name or nickname (optional)',
+    feedbackEmail: 'Email (optional, for a reply)',
+    feedbackMessage: 'Your message...',
+    feedbackSend: 'Send',
+    feedbackThanks: 'Thank you! Message received. 💜',
+    feedbackError: 'Oops, something went wrong. Try again or email alex.guennad@gmail.com directly.',
+  },
+  nl: {
+    heroSub: 'Een discrete metgezel om je anticonceptiering bij te houden,\neenvoudig en met een gerust gevoel.',
+    download: 'Gratis downloaden',
+    hint: 'Android • 100% gratis • Geen reclame • Geen account',
+    featuresTitle: 'Alles wat je nodig hebt, niets meer',
+    f1t: 'Slimme herinneringen', f1d: 'Meldingen D-7, D-1 en op D-dag, zodat je nooit een inbreng of verwijdering vergeet.',
+    f2t: 'Visuele kalender', f2d: '12 maanden in één oogopslag met kleurcodes. Elke dag is tikbaar om notities toe te voegen.',
+    f3t: 'Cyclus bijhouden', f3d: 'Geanimeerde ring met aftelling, menstruatie volgen en volledige cyclusgeschiedenis.',
+    f4t: 'Privé & lokaal', f4d: 'Geen data verzonden. Alles blijft op je telefoon. Geen account, geen server.',
+    f5t: 'Strak ontwerp', f5d: 'Zacht design, soepele animaties en intuïtieve navigatie gericht op het essentiële.',
+    f6t: '100% gratis', f6d: 'Geen reclame, geen in-app aankopen, geen abonnement. Een gratis hulpmiddel.',
+    howTitle: 'Hoe het werkt',
+    s1t: 'Installeren', s1d: 'Download de APK en installeer die op je Android.',
+    s2t: 'Instellen', s2d: 'Geef de inbrengdatum van de ring op — vandaag of een eerdere datum.',
+    s3t: 'Dat is alles!', s3d: 'Orring berekent alles: verwijdering, pauze, volgende inbreng. Herinneringen komen automatisch.',
+    ctaTitle: 'Klaar om je opvolging te vereenvoudigen?',
+    ctaSub: 'Orring is een persoonlijk project, met zorg gemaakt.\nVoor altijd gratis, geen reclame, geen tracking.',
+    ctaBtn: 'Orring downloaden',
+    footer: 'Gemaakt met ❤️',
+    footerSub: 'Geen gegevens verzameld • 100% lokaal',
+    toast: 'Bedankt voor je vertrouwen! Download gestart — controleer je meldingen of downloadmap. 💜',
+    installTitle: 'Eenvoudige installatie',
+    installP1: 'Omdat Orring niet in de Play Store staat, toont Android een beveiligingsmelding — dat is normaal voor elke direct gedownloade app.',
+    installStep1: 'Open het gedownloade bestand',
+    installStep2: 'Sta installatie vanaf deze bron toe',
+    installStep3: 'Als je telefoon een scan aanbiedt, accepteer of sla over — de app is 100% veilig',
+    installStep4: 'Installeer en geniet!',
+    installNote: 'De broncode is open en verifieerbaar. Er worden geen gegevens verzameld of verzonden.',
+    downloadsCount: 'downloads',
+    feedbackTitle: 'Laat een bericht achter',
+    feedbackSub: 'Suggestie, feedback of een vriendelijk woord — we lezen alles. 💌',
+    feedbackName: 'Naam of bijnaam (optioneel)',
+    feedbackEmail: 'E-mail (optioneel, voor antwoord)',
+    feedbackMessage: 'Je bericht...',
+    feedbackSend: 'Versturen',
+    feedbackThanks: 'Bedankt! Bericht ontvangen. 💜',
+    feedbackError: 'Oeps, er ging iets mis. Probeer opnieuw of mail rechtstreeks naar alex.guennad@gmail.com',
   },
   es: {
     heroSub: 'Tu compañera para seguir tu anillo anticonceptivo,\nde forma sencilla y con tranquilidad.',
@@ -103,6 +160,15 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Si tu teléfono ofrece un escaneo, acepta u omite — la app es 100% segura',
     installStep4: '¡Instala y disfruta!',
     installNote: 'El código fuente es abierto y verificable. No se recopila ni envía ningún dato.',
+    downloadsCount: 'descargas',
+    feedbackTitle: 'Déjanos un mensaje',
+    feedbackSub: 'Sugerencia, comentario o una palabra amable — leemos todo. 💌',
+    feedbackName: 'Nombre o apodo (opcional)',
+    feedbackEmail: 'Email (opcional, para respuesta)',
+    feedbackMessage: 'Tu mensaje...',
+    feedbackSend: 'Enviar',
+    feedbackThanks: '¡Gracias! Mensaje recibido. 💜',
+    feedbackError: 'Ups, ocurrió un error. Intenta de nuevo o escribe a alex.guennad@gmail.com',
   },
   pt: {
     heroSub: 'Sua companheira para acompanhar seu anel contraceptivo,\nde forma simples e tranquila.',
@@ -132,6 +198,15 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Se seu celular oferecer um scan, aceite ou pule — o app é 100% seguro',
     installStep4: 'Instale e aproveite!',
     installNote: 'O código-fonte é aberto e verificável. Nenhum dado é coletado ou enviado.',
+    downloadsCount: 'downloads',
+    feedbackTitle: 'Deixe uma mensagem',
+    feedbackSub: 'Sugestão, feedback ou uma palavra gentil — lemos tudo. 💌',
+    feedbackName: 'Nome ou apelido (opcional)',
+    feedbackEmail: 'Email (opcional, para resposta)',
+    feedbackMessage: 'Sua mensagem...',
+    feedbackSend: 'Enviar',
+    feedbackThanks: 'Obrigado! Mensagem recebida. 💜',
+    feedbackError: 'Ops, algo deu errado. Tente novamente ou escreva para alex.guennad@gmail.com',
   },
   de: {
     heroSub: 'Dein Begleiter zur Verfolgung deines Verhütungsrings,\neinfach und mit Gelassenheit.',
@@ -161,6 +236,15 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Wenn dein Handy einen Scan anbietet, akzeptiere oder überspringe — die App ist 100% sicher',
     installStep4: 'Installiere und genieße!',
     installNote: 'Der Quellcode ist offen und überprüfbar. Es werden keine Daten gesammelt oder gesendet.',
+    downloadsCount: 'Downloads',
+    feedbackTitle: 'Hinterlasse eine Nachricht',
+    feedbackSub: 'Vorschlag, Feedback oder ein nettes Wort — wir lesen alles. 💌',
+    feedbackName: 'Name oder Spitzname (optional)',
+    feedbackEmail: 'E-Mail (optional, für Antwort)',
+    feedbackMessage: 'Deine Nachricht...',
+    feedbackSend: 'Senden',
+    feedbackThanks: 'Danke! Nachricht erhalten. 💜',
+    feedbackError: 'Ups, etwas ist schiefgelaufen. Versuche es erneut oder schreibe an alex.guennad@gmail.com',
   },
   ar: {
     heroSub: 'رفيقتك لمتابعة حلقتك المانعة للحمل،\nببساطة وبكل طمأنينة.',
@@ -190,6 +274,15 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'إذا عرض هاتفك فحصاً، اقبلي أو تخطي — التطبيق آمن 100%',
     installStep4: 'ثبّتي واستمتعي!',
     installNote: 'الكود المصدري مفتوح وقابل للتحقق. لا يتم جمع أو إرسال أي بيانات.',
+    downloadsCount: 'تنزيلات',
+    feedbackTitle: 'اتركوا لنا رسالة',
+    feedbackSub: 'اقتراح، تعليق، أو كلمة لطيفة — نقرأ كل شيء. 💌',
+    feedbackName: 'الاسم أو اللقب (اختياري)',
+    feedbackEmail: 'البريد الإلكتروني (اختياري، للرد)',
+    feedbackMessage: 'رسالتكم...',
+    feedbackSend: 'إرسال',
+    feedbackThanks: 'شكراً! تم استلام الرسالة. 💜',
+    feedbackError: 'عذراً، حدث خطأ. حاولوا مرة أخرى أو اكتبوا إلى alex.guennad@gmail.com',
   },
   zh: {
     heroSub: '你的避孕环追踪伴侣，\n简单又安心。',
@@ -219,6 +312,15 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: '如果手机提供扫描，接受或跳过——应用100%安全',
     installStep4: '安装并享受！',
     installNote: '源代码开放可验证。不收集或发送任何数据。',
+    downloadsCount: '次下载',
+    feedbackTitle: '给我们留言',
+    feedbackSub: '建议、反馈或温暖的话 — 我们都会阅读。 💌',
+    feedbackName: '姓名或昵称（可选）',
+    feedbackEmail: '邮箱（可选，用于回复）',
+    feedbackMessage: '您的留言...',
+    feedbackSend: '发送',
+    feedbackThanks: '谢谢！留言已收到。 💜',
+    feedbackError: '出错了，请重试或直接写信到 alex.guennad@gmail.com',
   },
   ja: {
     heroSub: 'あなたの避妊リングを追跡するパートナー、\nシンプルで安心。',
@@ -248,6 +350,15 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'スマホがスキャンを提案したら、承認またはスキップ——アプリは100%安全',
     installStep4: 'インストールして楽しむ！',
     installNote: 'ソースコードは公開・検証可能。データの収集・送信は一切ありません。',
+    downloadsCount: 'ダウンロード',
+    feedbackTitle: 'メッセージをどうぞ',
+    feedbackSub: '提案、フィードバック、または温かい言葉 — すべて読みます。 💌',
+    feedbackName: '名前またはニックネーム（任意）',
+    feedbackEmail: 'メール（任意、返信用）',
+    feedbackMessage: 'メッセージ...',
+    feedbackSend: '送信',
+    feedbackThanks: 'ありがとう！メッセージを受け取りました。 💜',
+    feedbackError: 'エラーが発生しました。再度お試しいただくか、alex.guennad@gmail.com まで直接ご連絡ください。',
   },
 };
 
@@ -307,6 +418,16 @@ function LangSelector({ lang, setLang }: { lang: LangCode; setLang: (l: LangCode
   );
 }
 
+// ─── Auto-detect browser language ───
+function detectLang(): LangCode {
+  if (typeof navigator === 'undefined') return 'fr';
+  const stored = localStorage.getItem('orring-lang');
+  if (stored && LANGS.some(l => l.code === stored)) return stored as LangCode;
+  const nav = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+  const match = LANGS.find(l => l.code === nav);
+  return match ? match.code : 'en';
+}
+
 // ─── Download Toast ───
 function DownloadToast({ message, visible }: { message: string; visible: boolean }) {
   return (
@@ -326,9 +447,112 @@ function DownloadToast({ message, visible }: { message: string; visible: boolean
   );
 }
 
+// ─── Download Counter ───
+function DownloadCounter({ label }: { label: string }) {
+  const [count, setCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('https://api.github.com/repos/Alex-Lou/OrringLanding/releases/latest')
+      .then(r => r.json())
+      .then(data => {
+        const apk = data.assets?.find((a: { name: string; download_count: number }) => a.name === 'Orring.apk');
+        if (apk) setCount(apk.download_count);
+      })
+      .catch(() => { /* silent */ });
+  }, []);
+
+  if (count === null) return null;
+
+  return (
+    <motion.div
+      className="download-counter"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.4, duration: 0.5 }}
+    >
+      <span className="counter-icon">📥</span>
+      <span className="counter-num">{count.toLocaleString()}</span>
+      <span className="counter-label">{label}</span>
+    </motion.div>
+  );
+}
+
+// ─── Feedback Form ───
+type FeedbackKeys = 'feedbackTitle' | 'feedbackSub' | 'feedbackName' | 'feedbackEmail' | 'feedbackMessage' | 'feedbackSend' | 'feedbackThanks' | 'feedbackError';
+
+function FeedbackForm({ t }: { t: (k: FeedbackKeys) => string }) {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!message.trim()) return;
+    setStatus('sending');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/alex.guennad@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name || 'Anonymous',
+          email: email || 'no-reply@orring',
+          message,
+          _subject: 'Nouveau feedback Orring',
+        }),
+      });
+      if (res.ok) {
+        setStatus('sent');
+        setName(''); setEmail(''); setMessage('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section className="feedback-section">
+      <motion.h2 className="section-title"
+        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        💌 {t('feedbackTitle')}
+      </motion.h2>
+      <motion.p className="feedback-sub"
+        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}>
+        {t('feedbackSub')}
+      </motion.p>
+      <motion.form
+        className="feedback-form"
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <input type="text" placeholder={t('feedbackName')} value={name} onChange={e => setName(e.target.value)} className="feedback-input" />
+        <input type="email" placeholder={t('feedbackEmail')} value={email} onChange={e => setEmail(e.target.value)} className="feedback-input" />
+        <textarea placeholder={t('feedbackMessage')} value={message} onChange={e => setMessage(e.target.value)} className="feedback-textarea" required rows={4} />
+        <motion.button type="submit" className="feedback-btn" disabled={status === 'sending'} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+          {status === 'sending' ? '...' : t('feedbackSend')}
+        </motion.button>
+        <AnimatePresence>
+          {status === 'sent' && (
+            <motion.p className="feedback-thanks" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              {t('feedbackThanks')}
+            </motion.p>
+          )}
+          {status === 'error' && (
+            <motion.p className="feedback-error" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              {t('feedbackError')}
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </motion.form>
+    </section>
+  );
+}
+
 // ─── App ───
 function App() {
-  const [lang, setLang] = useState<LangCode>('fr');
+  const [lang, setLang] = useState<LangCode>(() => detectLang());
   const [showToast, setShowToast] = useState(false);
   const t = useT(lang);
   const ref = useRef<HTMLDivElement>(null);
@@ -336,14 +560,20 @@ function App() {
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const isRtl = lang === 'ar';
 
+  // Persist language choice
+  const handleSetLang = (l: LangCode) => {
+    setLang(l);
+    try { localStorage.setItem('orring-lang', l); } catch { /* no-op */ }
+  };
+
   const handleDownload = () => {
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 5000);
+    setTimeout(() => setShowToast(false), 6000);
   };
 
   return (
     <div className="app" ref={ref} dir={isRtl ? 'rtl' : 'ltr'}>
-      <LangSelector lang={lang} setLang={setLang} />
+      <LangSelector lang={lang} setLang={handleSetLang} />
       <DownloadToast message={t('toast')} visible={showToast} />
 
       {/* Floating particles */}
@@ -391,7 +621,9 @@ function App() {
           {t('hint')}
         </motion.p>
 
-        <motion.div className="scroll-indicator" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}>
+        <DownloadCounter label={t('downloadsCount')} />
+
+        <motion.div className="scroll-indicator" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.7 }}>
           <div className="scroll-arrow" />
         </motion.div>
       </motion.section>
@@ -469,6 +701,9 @@ function App() {
           </motion.a>
         </motion.div>
       </section>
+
+      {/* Feedback */}
+      <FeedbackForm t={t as (k: FeedbackKeys) => string} />
 
       {/* Footer */}
       <footer className="footer">
