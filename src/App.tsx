@@ -55,10 +55,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Envoyer',
     feedbackThanks: 'Merci ! Message bien reçu. 💜',
     feedbackError: "Oups, un souci est survenu. Réessaie ou écris directement à alex.guennad@gmail.com",
-    starTitle: 'Mets une étoile sur GitHub',
-    starSub: 'Un geste gratuit qui aide énormément à la visibilité du projet ✨',
+    supportTitle: 'Soutenir Orring',
+    supportSub: 'Quelques gestes simples pour aider le projet à grandir',
+    likeBtn: "J'aime",
+    likeSub: 'Laisse un cœur, ça fait plaisir',
+    starLabel: 'Pour les personnes avec un compte GitHub',
     starBtn: 'Star sur GitHub',
-    starCount: 'étoiles',
+    shareTitle: 'Partager avec une amie',
+    shareMsg: "Hey, j'ai trouvé Orring, une app gratuite pour suivre l'anneau contraceptif. Pas de pub, pas de compte : https://alex-lou.github.io/OrringLanding/",
+    copyLink: 'Copier le lien',
+    copied: 'Lien copié ✓',
   },
   en: {
     heroSub: 'A quiet companion to track your contraceptive ring,\nsimply and with peace of mind.',
@@ -97,10 +103,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Send',
     feedbackThanks: 'Thank you! Message received. 💜',
     feedbackError: 'Oops, something went wrong. Try again or email alex.guennad@gmail.com directly.',
-    starTitle: 'Give a star on GitHub',
-    starSub: 'A free gesture that massively helps the project visibility ✨',
+    supportTitle: 'Support Orring',
+    supportSub: 'A few simple ways to help the project grow',
+    likeBtn: 'Like',
+    likeSub: 'Leave a heart, it means a lot',
+    starLabel: 'For people with a GitHub account',
     starBtn: 'Star on GitHub',
-    starCount: 'stars',
+    shareTitle: 'Share with a friend',
+    shareMsg: "Hey, I found Orring — a free app to track the contraceptive ring. No ads, no account: https://alex-lou.github.io/OrringLanding/",
+    copyLink: 'Copy link',
+    copied: 'Link copied ✓',
   },
   nl: {
     heroSub: 'Een discrete metgezel om je anticonceptiering bij te houden,\neenvoudig en met een gerust gevoel.',
@@ -139,10 +151,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Versturen',
     feedbackThanks: 'Bedankt! Bericht ontvangen. 💜',
     feedbackError: 'Oeps, er ging iets mis. Probeer opnieuw of mail rechtstreeks naar alex.guennad@gmail.com',
-    starTitle: 'Geef een ster op GitHub',
-    starSub: "Een gratis gebaar dat de zichtbaarheid van het project enorm helpt ✨",
+    supportTitle: 'Steun Orring',
+    supportSub: 'Een paar eenvoudige manieren om het project te helpen groeien',
+    likeBtn: 'Vind ik leuk',
+    likeSub: 'Laat een hartje achter, dat doet goed',
+    starLabel: 'Voor mensen met een GitHub-account',
     starBtn: 'Ster op GitHub',
-    starCount: 'sterren',
+    shareTitle: 'Delen met een vriendin',
+    shareMsg: 'Hé, ik heb Orring gevonden — een gratis app om de anticonceptiering bij te houden. Geen reclame, geen account: https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'Link kopiëren',
+    copied: 'Link gekopieerd ✓',
   },
   es: {
     heroSub: 'Tu compañera para seguir tu anillo anticonceptivo,\nde forma sencilla y con tranquilidad.',
@@ -181,10 +199,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Enviar',
     feedbackThanks: '¡Gracias! Mensaje recibido. 💜',
     feedbackError: 'Ups, ocurrió un error. Intenta de nuevo o escribe a alex.guennad@gmail.com',
-    starTitle: 'Dale una estrella en GitHub',
-    starSub: 'Un gesto gratuito que ayuda muchísimo a la visibilidad del proyecto ✨',
-    starBtn: 'Star en GitHub',
-    starCount: 'estrellas',
+    supportTitle: 'Apoya a Orring',
+    supportSub: 'Algunas formas simples de ayudar al proyecto a crecer',
+    likeBtn: 'Me gusta',
+    likeSub: 'Deja un corazón, significa mucho',
+    starLabel: 'Para quienes tienen cuenta de GitHub',
+    starBtn: 'Estrella en GitHub',
+    shareTitle: 'Compartir con una amiga',
+    shareMsg: 'Hola, encontré Orring — una app gratis para seguir el anillo anticonceptivo. Sin anuncios, sin cuenta: https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'Copiar enlace',
+    copied: 'Enlace copiado ✓',
   },
   pt: {
     heroSub: 'Sua companheira para acompanhar seu anel contraceptivo,\nde forma simples e tranquila.',
@@ -223,10 +247,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Enviar',
     feedbackThanks: 'Obrigado! Mensagem recebida. 💜',
     feedbackError: 'Ops, algo deu errado. Tente novamente ou escreva para alex.guennad@gmail.com',
-    starTitle: 'Dê uma estrela no GitHub',
-    starSub: 'Um gesto gratuito que ajuda muito a visibilidade do projeto ✨',
-    starBtn: 'Star no GitHub',
-    starCount: 'estrelas',
+    supportTitle: 'Apoie o Orring',
+    supportSub: 'Algumas formas simples de ajudar o projeto a crescer',
+    likeBtn: 'Curtir',
+    likeSub: 'Deixe um coração, significa muito',
+    starLabel: 'Para quem tem conta no GitHub',
+    starBtn: 'Estrela no GitHub',
+    shareTitle: 'Compartilhar com uma amiga',
+    shareMsg: 'Oi, encontrei o Orring — um app grátis para acompanhar o anel contraceptivo. Sem anúncios, sem conta: https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'Copiar link',
+    copied: 'Link copiado ✓',
   },
   de: {
     heroSub: 'Dein Begleiter zur Verfolgung deines Verhütungsrings,\neinfach und mit Gelassenheit.',
@@ -265,10 +295,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Senden',
     feedbackThanks: 'Danke! Nachricht erhalten. 💜',
     feedbackError: 'Ups, etwas ist schiefgelaufen. Versuche es erneut oder schreibe an alex.guennad@gmail.com',
-    starTitle: 'Gib einen Stern auf GitHub',
-    starSub: 'Eine kostenlose Geste, die der Sichtbarkeit des Projekts enorm hilft ✨',
-    starBtn: 'Star auf GitHub',
-    starCount: 'Sterne',
+    supportTitle: 'Orring unterstützen',
+    supportSub: 'Ein paar einfache Wege, dem Projekt beim Wachsen zu helfen',
+    likeBtn: 'Gefällt mir',
+    likeSub: 'Hinterlasse ein Herz, das freut uns',
+    starLabel: 'Für Personen mit GitHub-Konto',
+    starBtn: 'Stern auf GitHub',
+    shareTitle: 'Mit einer Freundin teilen',
+    shareMsg: 'Hey, ich habe Orring gefunden — eine kostenlose App zur Verfolgung des Verhütungsrings. Keine Werbung, kein Konto: https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'Link kopieren',
+    copied: 'Link kopiert ✓',
   },
   ar: {
     heroSub: 'رفيقتك لمتابعة حلقتك المانعة للحمل،\nببساطة وبكل طمأنينة.',
@@ -307,10 +343,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'إرسال',
     feedbackThanks: 'شكراً! تم استلام الرسالة. 💜',
     feedbackError: 'عذراً، حدث خطأ. حاولوا مرة أخرى أو اكتبوا إلى alex.guennad@gmail.com',
-    starTitle: 'ضعوا نجمة على GitHub',
-    starSub: 'لفتة مجانية تساعد كثيراً على ظهور المشروع ✨',
+    supportTitle: 'ادعموا Orring',
+    supportSub: 'بعض الطرق البسيطة لمساعدة المشروع على النمو',
+    likeBtn: 'إعجاب',
+    likeSub: 'اتركوا قلباً، هذا يعني الكثير',
+    starLabel: 'لمن لديهم حساب GitHub',
     starBtn: 'نجمة على GitHub',
-    starCount: 'نجوم',
+    shareTitle: 'شاركوا مع صديقة',
+    shareMsg: 'مرحباً، وجدت Orring — تطبيق مجاني لمتابعة الحلقة المانعة للحمل. بدون إعلانات، بدون حساب: https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'نسخ الرابط',
+    copied: 'تم نسخ الرابط ✓',
   },
   zh: {
     heroSub: '你的避孕环追踪伴侣，\n简单又安心。',
@@ -349,10 +391,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: '发送',
     feedbackThanks: '谢谢！留言已收到。 💜',
     feedbackError: '出错了，请重试或直接写信到 alex.guennad@gmail.com',
-    starTitle: '在 GitHub 上点个星',
-    starSub: '一个免费的举动，能极大帮助项目的可见度 ✨',
+    supportTitle: '支持 Orring',
+    supportSub: '一些简单的方式帮助项目成长',
+    likeBtn: '喜欢',
+    likeSub: '留下一颗爱心，非常暖心',
+    starLabel: '适合有 GitHub 账号的用户',
     starBtn: 'GitHub Star',
-    starCount: '颗星',
+    shareTitle: '分享给朋友',
+    shareMsg: '嗨，我发现了 Orring —— 一个免费追踪避孕环的应用。无广告，无需账号：https://alex-lou.github.io/OrringLanding/',
+    copyLink: '复制链接',
+    copied: '链接已复制 ✓',
   },
   ja: {
     heroSub: 'あなたの避妊リングを追跡するパートナー、\nシンプルで安心。',
@@ -391,10 +439,16 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: '送信',
     feedbackThanks: 'ありがとう！メッセージを受け取りました。 💜',
     feedbackError: 'エラーが発生しました。再度お試しいただくか、alex.guennad@gmail.com まで直接ご連絡ください。',
-    starTitle: 'GitHub でスターを',
-    starSub: 'プロジェクトの認知度向上に大きく貢献する無料のサポートです ✨',
+    supportTitle: 'Orring をサポート',
+    supportSub: 'プロジェクトの成長を助けるシンプルな方法',
+    likeBtn: 'いいね',
+    likeSub: 'ハートを残してください、とても嬉しいです',
+    starLabel: 'GitHub アカウントをお持ちの方へ',
     starBtn: 'GitHub でスター',
-    starCount: '個',
+    shareTitle: '友達とシェア',
+    shareMsg: 'こんにちは、Orring を見つけました — 避妊リングを追跡する無料アプリ。広告なし、アカウント不要：https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'リンクをコピー',
+    copied: 'リンクをコピーしました ✓',
   },
 };
 
@@ -513,53 +567,190 @@ function DownloadCounter({ label }: { label: string }) {
   );
 }
 
-// ─── GitHub Star Section ───
-type StarKeys = 'starTitle' | 'starSub' | 'starBtn' | 'starCount';
+// ─── Support Section (Like + Star + Share) ───
+type SupportKeys = 'supportTitle' | 'supportSub' | 'likeBtn' | 'likeSub' | 'starLabel' | 'starBtn' | 'shareTitle' | 'shareMsg' | 'copyLink' | 'copied';
 
-function StarSection({ t }: { t: (k: StarKeys) => string }) {
+const SITE_URL = 'https://alex-lou.github.io/OrringLanding/';
+const LIKE_API_HIT = 'https://abacus.jasoncameron.dev/hit/orring-landing/likes';
+const LIKE_API_GET = 'https://abacus.jasoncameron.dev/get/orring-landing/likes';
+
+function LikeButton({ t }: { t: (k: SupportKeys) => string }) {
+  const [count, setCount] = useState<number | null>(null);
+  const [liked, setLiked] = useState(false);
+  const [burst, setBurst] = useState(0);
+
+  useEffect(() => {
+    try { setLiked(localStorage.getItem('orring-liked') === '1'); } catch { /* ignore */ }
+    fetch(LIKE_API_GET)
+      .then(r => r.json())
+      .then(d => { if (typeof d.value === 'number') setCount(d.value); })
+      .catch(() => { /* silent */ });
+  }, []);
+
+  const handleLike = () => {
+    if (liked) return;
+    setLiked(true);
+    setBurst(b => b + 1);
+    try { localStorage.setItem('orring-liked', '1'); } catch { /* ignore */ }
+    fetch(LIKE_API_HIT)
+      .then(r => r.json())
+      .then(d => { if (typeof d.value === 'number') setCount(d.value); })
+      .catch(() => setCount(c => (c ?? 0) + 1));
+  };
+
+  return (
+    <motion.button
+      className={`like-btn ${liked ? 'liked' : ''}`}
+      onClick={handleLike}
+      whileHover={{ scale: liked ? 1 : 1.04 }}
+      whileTap={{ scale: 0.95 }}
+      disabled={liked}
+      aria-label={t('likeBtn')}
+    >
+      <motion.span
+        className="like-heart"
+        animate={liked ? { scale: [1, 1.4, 1] } : {}}
+        transition={{ duration: 0.4 }}
+      >
+        {liked ? '💖' : '🤍'}
+      </motion.span>
+      <span className="like-label">{t('likeBtn')}</span>
+      {count !== null && <span className="support-count">{count.toLocaleString()}</span>}
+
+      {/* Flying hearts on click */}
+      <AnimatePresence>
+        {burst > 0 && (
+          <motion.span
+            key={burst}
+            className="like-flying"
+            initial={{ opacity: 1, y: 0, scale: 1 }}
+            animate={{ opacity: 0, y: -60, scale: 1.6 }}
+            transition={{ duration: 1 }}
+            onAnimationComplete={() => setBurst(0)}
+          >
+            💜
+          </motion.span>
+        )}
+      </AnimatePresence>
+    </motion.button>
+  );
+}
+
+function StarButtonInline({ t }: { t: (k: SupportKeys) => string }) {
   const [stars, setStars] = useState<number | null>(null);
 
   useEffect(() => {
     fetch('https://api.github.com/repos/Alex-Lou/OrringLanding')
       .then(r => r.json())
-      .then(data => {
-        if (typeof data.stargazers_count === 'number') setStars(data.stargazers_count);
-      })
+      .then(data => { if (typeof data.stargazers_count === 'number') setStars(data.stargazers_count); })
       .catch(() => { /* silent */ });
   }, []);
 
   return (
-    <section className="star-section">
-      <motion.div className="star-card"
-        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-      >
-        <div className="star-icon-wrap">
-          <motion.span
-            className="star-big-icon"
-            animate={{ rotate: [0, -15, 15, -10, 10, 0], scale: [1, 1.1, 1, 1.05, 1] }}
-            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
-          >
-            ⭐
-          </motion.span>
-        </div>
-        <h2 className="star-title">{t('starTitle')}</h2>
-        <p className="star-sub">{t('starSub')}</p>
+    <motion.a
+      href="https://github.com/Alex-Lou/OrringLanding"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="star-btn-inline"
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.97 }}
+    >
+      <span className="star-emoji">⭐</span>
+      <span className="star-label-text">{t('starBtn')}</span>
+      {stars !== null && <span className="support-count">{stars.toLocaleString()}</span>}
+    </motion.a>
+  );
+}
+
+function ShareButtons({ t }: { t: (k: SupportKeys) => string }) {
+  const [copied, setCopied] = useState(false);
+  const msg = t('shareMsg');
+  const encodedMsg = encodeURIComponent(msg);
+  const encodedUrl = encodeURIComponent(SITE_URL);
+
+  const shares = [
+    { label: 'WhatsApp', icon: '💬', url: `https://wa.me/?text=${encodedMsg}`, color: '#25D366' },
+    { label: 'Telegram', icon: '✈️', url: `https://t.me/share/url?url=${encodedUrl}&text=${encodeURIComponent(msg.replace(SITE_URL, '').trim())}`, color: '#0088cc' },
+    { label: 'Email', icon: '✉️', url: `mailto:?subject=Orring&body=${encodedMsg}`, color: '#8B7FB8' },
+    { label: 'X', icon: '𝕏', url: `https://twitter.com/intent/tweet?text=${encodedMsg}`, color: '#000000' },
+  ];
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(SITE_URL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  return (
+    <div className="share-buttons-row">
+      {shares.map(s => (
         <motion.a
-          href="https://github.com/Alex-Lou/OrringLanding"
+          key={s.label}
+          href={s.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="star-btn"
-          whileHover={{ scale: 1.04, boxShadow: '0 8px 30px rgba(255,215,90,0.4)' }}
-          whileTap={{ scale: 0.97 }}
+          className="share-btn"
+          whileHover={{ y: -3, scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          title={s.label}
+          style={{ ['--share-color' as string]: s.color }}
         >
-          <span>⭐</span>
-          <span>{t('starBtn')}</span>
-          {stars !== null && (
-            <span className="star-count-pill">
-              {stars.toLocaleString()} {t('starCount')}
-            </span>
-          )}
+          <span className="share-icon">{s.icon}</span>
+          <span className="share-label">{s.label}</span>
         </motion.a>
+      ))}
+      <motion.button
+        onClick={handleCopy}
+        className={`share-btn share-copy ${copied ? 'copied' : ''}`}
+        whileHover={{ y: -3, scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        title={t('copyLink')}
+      >
+        <span className="share-icon">{copied ? '✓' : '🔗'}</span>
+        <span className="share-label">{copied ? t('copied') : t('copyLink')}</span>
+      </motion.button>
+    </div>
+  );
+}
+
+function SupportSection({ t }: { t: (k: SupportKeys) => string }) {
+  return (
+    <section className="support-section">
+      <motion.h2 className="section-title"
+        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+      >
+        🫶 {t('supportTitle')}
+      </motion.h2>
+      <motion.p className="support-sub"
+        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        {t('supportSub')}
+      </motion.p>
+
+      {/* Row 1 : Like + Star */}
+      <motion.div className="support-row"
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="support-item">
+          <LikeButton t={t} />
+          <span className="support-hint">{t('likeSub')}</span>
+        </div>
+        <div className="support-item">
+          <StarButtonInline t={t} />
+          <span className="support-hint">{t('starLabel')}</span>
+        </div>
+      </motion.div>
+
+      {/* Share block */}
+      <motion.div className="share-block"
+        initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <h3 className="share-heading">{t('shareTitle')}</h3>
+        <ShareButtons t={t} />
       </motion.div>
     </section>
   );
@@ -790,8 +981,8 @@ function App() {
         </motion.div>
       </section>
 
-      {/* GitHub Star */}
-      <StarSection t={t as (k: StarKeys) => string} />
+      {/* Support (Like + Star + Share) */}
+      <SupportSection t={t as (k: SupportKeys) => string} />
 
       {/* Feedback */}
       <FeedbackForm t={t as (k: FeedbackKeys) => string} />
