@@ -4,8 +4,8 @@
   "description": "App gratuite de suivi d'anneau contraceptif",
   "start_url": "/OrringLanding/",
   "display": "standalone",
-  "background_color": "#FFFBFC",
-  "theme_color": "#F8B4C8",
+  "background_color": "#FCFBFE",
+  "theme_color": "#A697D9",
   "icons": [
     { "src": "/OrringLanding/favicon.png", "sizes": "64x64", "type": "image/png" }
   ]
