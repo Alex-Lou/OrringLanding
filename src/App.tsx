@@ -1349,7 +1349,7 @@ function App() {
           {t('heroSub').split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
         </motion.p>
 
-        <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.1.2/Orring.apk"} download onClick={handleDownload} className="download-btn"
+        <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.1.3/Orring.apk"} download onClick={handleDownload} className="download-btn"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
           whileHover={{ scale: 1.05, boxShadow: '0 8px 40px rgba(166,151,217,0.4)' }}
           whileTap={{ scale: 0.97 }}
@@ -1461,7 +1461,7 @@ function App() {
           <img src={`${base}orring-logo.png`} alt="Orring" className="cta-logo" />
           <h2>{t('ctaTitle')}</h2>
           <p>{t('ctaSub').split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}</p>
-          <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.1.2/Orring.apk"} download onClick={handleDownload} className="download-btn cta-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.1.3/Orring.apk"} download onClick={handleDownload} className="download-btn cta-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             📲 {t('ctaBtn')}
           </motion.a>
         </motion.div>
