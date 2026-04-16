@@ -889,7 +889,7 @@ function App() {
 
         <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.0.0/Orring.apk"} download onClick={handleDownload} className="download-btn"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
-          whileHover={{ scale: 1.05, boxShadow: '0 8px 40px rgba(248,180,200,0.4)' }}
+          whileHover={{ scale: 1.05, boxShadow: '0 8px 40px rgba(166,151,217,0.4)' }}
           whileTap={{ scale: 0.97 }}
         >
           <span className="download-icon">📲</span>
@@ -923,7 +923,7 @@ function App() {
             { icon: '🆓', tk: 'f6' },
           ]).map((f, i) => (
             <motion.div key={i} className="feature-card" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} custom={i}
-              whileHover={{ y: -6, boxShadow: '0 12px 40px rgba(248,180,200,0.15)' }}
+              whileHover={{ y: -6, boxShadow: '0 12px 40px rgba(166,151,217,0.15)' }}
             >
               <span className="feature-icon">{f.icon}</span>
               <h3>{t(`${f.tk}t`)}</h3>
