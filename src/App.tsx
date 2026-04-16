@@ -851,7 +851,7 @@ function ShareButtons({ t }: { t: (k: SupportKeys) => string }) {
 
 function SupportSection({ t }: { t: (k: SupportKeys) => string }) {
   return (
-    <section className="support-section">
+    <section id="support" className="support-section">
       <motion.h2 className="section-title"
         initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
       >
@@ -884,6 +884,7 @@ function SupportSection({ t }: { t: (k: SupportKeys) => string }) {
         <h3 className="share-heading">{t('shareTitle')}</h3>
         <ShareButtons t={t} />
       </motion.div>
+      <SectionArrow nextId="feedback" />
     </section>
   );
 }
@@ -924,7 +925,7 @@ function FeedbackForm({ t }: { t: (k: FeedbackKeys) => string }) {
   };
 
   return (
-    <section className="feedback-section">
+    <section id="feedback" className="feedback-section">
       <motion.h2 className="section-title"
         initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
         💌 {t('feedbackTitle')}
@@ -975,7 +976,7 @@ function ExplanationsSection({ t }: { t: (k: ExpKeys) => string }) {
   ];
 
   return (
-    <section className="explanations-section">
+    <section id="explanations" className="explanations-section">
       <motion.h2
         className="section-title"
         initial={{ opacity: 0, y: 30 }}
@@ -1032,7 +1033,75 @@ function ExplanationsSection({ t }: { t: (k: ExpKeys) => string }) {
           );
         })}
       </div>
+      <SectionArrow nextId="cta" />
     </section>
+  );
+}
+
+// ─── Section navigation order ───
+const SECTION_ORDER = ['hero', 'features', 'how', 'install', 'explanations', 'cta', 'support', 'feedback'];
+
+function scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ─── Down arrow at the bottom of a section ───
+function SectionArrow({ nextId }: { nextId: string }) {
+  return (
+    <button
+      type="button"
+      className="section-arrow"
+      onClick={() => scrollToSection(nextId)}
+      aria-label="Next section"
+    >
+      <span className="section-arrow-chev">▾</span>
+    </button>
+  );
+}
+
+// ─── Nav arrows (top-right, under lang selector) ───
+function NavArrows() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setVisible(window.scrollY > 120);
+    window.addEventListener('scroll', handler, { passive: true });
+    handler();
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  const toTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const toBottom = () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
+  const toPrevSection = () => {
+    // Find the section closest to (but not after) the top of the viewport
+    const scrollY = window.scrollY + 100;
+    let currentIdx = 0;
+    for (let i = 0; i < SECTION_ORDER.length; i++) {
+      const el = document.getElementById(SECTION_ORDER[i]);
+      if (el && el.offsetTop <= scrollY) currentIdx = i;
+    }
+    const prev = Math.max(0, currentIdx - 1);
+    scrollToSection(SECTION_ORDER[prev]);
+  };
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className="nav-arrows"
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 10 }}
+          transition={{ duration: 0.25 }}
+        >
+          <button type="button" className="nav-arrow-btn" onClick={toTop} title="Haut de la page" aria-label="Top">⏫</button>
+          <button type="button" className="nav-arrow-btn" onClick={toPrevSection} title="Section précédente" aria-label="Previous">⬆</button>
+          <button type="button" className="nav-arrow-btn" onClick={toBottom} title="Bas de la page" aria-label="Bottom">⏬</button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
@@ -1060,6 +1129,7 @@ function App() {
   return (
     <div className="app" ref={ref} dir={isRtl ? 'rtl' : 'ltr'}>
       <LangSelector lang={lang} setLang={handleSetLang} />
+      <NavArrows />
       <DownloadToast message={t('toast')} visible={showToast} />
 
       {/* Floating particles */}
@@ -1077,7 +1147,7 @@ function App() {
       </div>
 
       {/* Hero */}
-      <motion.section className="hero" style={{ y: bgY }}>
+      <motion.section id="hero" className="hero" style={{ y: bgY }}>
         <motion.div className="hero-ring"
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
@@ -1110,12 +1180,19 @@ function App() {
         <DownloadCounter label={t('downloadsCount')} />
 
         <motion.div className="scroll-indicator" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.7 }}>
-          <div className="scroll-arrow" />
+          <button
+            type="button"
+            className="scroll-arrow-btn"
+            onClick={() => scrollToSection('features')}
+            aria-label="Next section"
+          >
+            <span className="scroll-arrow" />
+          </button>
         </motion.div>
       </motion.section>
 
       {/* Features */}
-      <section className="features">
+      <section id="features" className="features">
         <motion.h2 className="section-title" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} custom={0}>
           {t('featuresTitle')}
         </motion.h2>
@@ -1138,10 +1215,11 @@ function App() {
             </motion.div>
           ))}
         </div>
+        <SectionArrow nextId="how" />
       </section>
 
       {/* How it works */}
-      <section className="how-it-works">
+      <section id="how" className="how-it-works">
         <motion.h2 className="section-title" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
           {t('howTitle')}
         </motion.h2>
@@ -1155,10 +1233,11 @@ function App() {
             </motion.div>
           ))}
         </div>
+        <SectionArrow nextId="install" />
       </section>
 
       {/* Installation help */}
-      <section className="install-help">
+      <section id="install" className="install-help">
         <motion.h2 className="section-title" variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={0}>
           🛡️ {t('installTitle')}
         </motion.h2>
@@ -1185,13 +1264,14 @@ function App() {
             .
           </p>
         </motion.div>
+        <SectionArrow nextId="explanations" />
       </section>
 
       {/* Explanations */}
       <ExplanationsSection t={t as (k: ExpKeys) => string} />
 
       {/* CTA */}
-      <section className="cta">
+      <section id="cta" className="cta">
         <motion.div className="cta-card" variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <img src={`${base}orring-logo.png`} alt="Orring" className="cta-logo" />
           <h2>{t('ctaTitle')}</h2>
@@ -1200,6 +1280,7 @@ function App() {
             📲 {t('ctaBtn')}
           </motion.a>
         </motion.div>
+        <SectionArrow nextId="support" />
       </section>
 
       {/* Support (Like + Star + Share) */}
