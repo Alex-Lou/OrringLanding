@@ -848,9 +848,13 @@ body {
 }
 
 .lang-option-flag {
-  font-size: 1.15rem;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
   line-height: 1;
+}
+.lang-option-flag svg {
+  display: block;
 }
 .lang-option-label {
   flex: 1;
