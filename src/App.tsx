@@ -630,7 +630,9 @@ function LangSelector({ lang, setLang }: { lang: LangCode; setLang: (l: LangCode
                 className={`lang-option ${code === lang ? 'active' : ''}`}
                 onClick={() => { setLang(code); setOpen(false); }}
               >
-                {flag} {label}
+                <span className="lang-option-flag">{flag}</span>
+                <span className="lang-option-label">{label}</span>
+                {code === lang && <span className="lang-option-check">✓</span>}
               </button>
             ))}
           </motion.div>
@@ -1074,16 +1076,26 @@ function NavArrows() {
   const toTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const toBottom = () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 
-  const toPrevSection = () => {
-    // Find the section closest to (but not after) the top of the viewport
+  const findCurrentSectionIdx = () => {
     const scrollY = window.scrollY + 100;
     let currentIdx = 0;
     for (let i = 0; i < SECTION_ORDER.length; i++) {
       const el = document.getElementById(SECTION_ORDER[i]);
       if (el && el.offsetTop <= scrollY) currentIdx = i;
     }
-    const prev = Math.max(0, currentIdx - 1);
+    return currentIdx;
+  };
+
+  const toPrevSection = () => {
+    const idx = findCurrentSectionIdx();
+    const prev = Math.max(0, idx - 1);
     scrollToSection(SECTION_ORDER[prev]);
+  };
+
+  const toNextSection = () => {
+    const idx = findCurrentSectionIdx();
+    const next = Math.min(SECTION_ORDER.length - 1, idx + 1);
+    scrollToSection(SECTION_ORDER[next]);
   };
 
   return (
@@ -1096,9 +1108,26 @@ function NavArrows() {
           exit={{ opacity: 0, x: 10 }}
           transition={{ duration: 0.25 }}
         >
-          <button type="button" className="nav-arrow-btn" onClick={toTop} title="Haut de la page" aria-label="Top">⏫</button>
-          <button type="button" className="nav-arrow-btn" onClick={toPrevSection} title="Section précédente" aria-label="Previous">⬆</button>
-          <button type="button" className="nav-arrow-btn" onClick={toBottom} title="Bas de la page" aria-label="Bottom">⏬</button>
+          <button type="button" className="nav-arrow-btn" onClick={toTop} title="Haut de la page" aria-label="Top">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 3 L8 13 M8 3 L4 7 M8 3 L12 7 M4 1 L12 1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" className="nav-arrow-btn" onClick={toPrevSection} title="Section précédente" aria-label="Previous">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 3 L8 13 M4 7 L8 3 L12 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" className="nav-arrow-btn" onClick={toNextSection} title="Section suivante" aria-label="Next">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 13 L8 3 M4 9 L8 13 L12 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button type="button" className="nav-arrow-btn" onClick={toBottom} title="Bas de la page" aria-label="Bottom">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 13 L8 3 M4 9 L8 13 L12 9 M4 15 L12 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </motion.div>
       )}
     </AnimatePresence>
@@ -1179,15 +1208,13 @@ function App() {
 
         <DownloadCounter label={t('downloadsCount')} />
 
-        <motion.div className="scroll-indicator" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.7 }}>
-          <button
-            type="button"
-            className="scroll-arrow-btn"
-            onClick={() => scrollToSection('features')}
-            aria-label="Next section"
-          >
-            <span className="scroll-arrow" />
-          </button>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.7 }}
+          className="hero-arrow-wrap"
+        >
+          <SectionArrow nextId="features" />
         </motion.div>
       </motion.section>
 
