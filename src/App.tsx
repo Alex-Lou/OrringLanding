@@ -55,6 +55,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Envoyer',
     feedbackThanks: 'Merci ! Message bien reçu. 💜',
     feedbackError: "Oups, un souci est survenu. Réessaie ou écris directement à alex.guennad@gmail.com",
+    starTitle: 'Mets une étoile sur GitHub',
+    starSub: 'Un geste gratuit qui aide énormément à la visibilité du projet ✨',
+    starBtn: 'Star sur GitHub',
+    starCount: 'étoiles',
   },
   en: {
     heroSub: 'A quiet companion to track your contraceptive ring,\nsimply and with peace of mind.',
@@ -93,6 +97,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Send',
     feedbackThanks: 'Thank you! Message received. 💜',
     feedbackError: 'Oops, something went wrong. Try again or email alex.guennad@gmail.com directly.',
+    starTitle: 'Give a star on GitHub',
+    starSub: 'A free gesture that massively helps the project visibility ✨',
+    starBtn: 'Star on GitHub',
+    starCount: 'stars',
   },
   nl: {
     heroSub: 'Een discrete metgezel om je anticonceptiering bij te houden,\neenvoudig en met een gerust gevoel.',
@@ -131,6 +139,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Versturen',
     feedbackThanks: 'Bedankt! Bericht ontvangen. 💜',
     feedbackError: 'Oeps, er ging iets mis. Probeer opnieuw of mail rechtstreeks naar alex.guennad@gmail.com',
+    starTitle: 'Geef een ster op GitHub',
+    starSub: "Een gratis gebaar dat de zichtbaarheid van het project enorm helpt ✨",
+    starBtn: 'Ster op GitHub',
+    starCount: 'sterren',
   },
   es: {
     heroSub: 'Tu compañera para seguir tu anillo anticonceptivo,\nde forma sencilla y con tranquilidad.',
@@ -169,6 +181,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Enviar',
     feedbackThanks: '¡Gracias! Mensaje recibido. 💜',
     feedbackError: 'Ups, ocurrió un error. Intenta de nuevo o escribe a alex.guennad@gmail.com',
+    starTitle: 'Dale una estrella en GitHub',
+    starSub: 'Un gesto gratuito que ayuda muchísimo a la visibilidad del proyecto ✨',
+    starBtn: 'Star en GitHub',
+    starCount: 'estrellas',
   },
   pt: {
     heroSub: 'Sua companheira para acompanhar seu anel contraceptivo,\nde forma simples e tranquila.',
@@ -207,6 +223,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Enviar',
     feedbackThanks: 'Obrigado! Mensagem recebida. 💜',
     feedbackError: 'Ops, algo deu errado. Tente novamente ou escreva para alex.guennad@gmail.com',
+    starTitle: 'Dê uma estrela no GitHub',
+    starSub: 'Um gesto gratuito que ajuda muito a visibilidade do projeto ✨',
+    starBtn: 'Star no GitHub',
+    starCount: 'estrelas',
   },
   de: {
     heroSub: 'Dein Begleiter zur Verfolgung deines Verhütungsrings,\neinfach und mit Gelassenheit.',
@@ -245,6 +265,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'Senden',
     feedbackThanks: 'Danke! Nachricht erhalten. 💜',
     feedbackError: 'Ups, etwas ist schiefgelaufen. Versuche es erneut oder schreibe an alex.guennad@gmail.com',
+    starTitle: 'Gib einen Stern auf GitHub',
+    starSub: 'Eine kostenlose Geste, die der Sichtbarkeit des Projekts enorm hilft ✨',
+    starBtn: 'Star auf GitHub',
+    starCount: 'Sterne',
   },
   ar: {
     heroSub: 'رفيقتك لمتابعة حلقتك المانعة للحمل،\nببساطة وبكل طمأنينة.',
@@ -283,6 +307,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: 'إرسال',
     feedbackThanks: 'شكراً! تم استلام الرسالة. 💜',
     feedbackError: 'عذراً، حدث خطأ. حاولوا مرة أخرى أو اكتبوا إلى alex.guennad@gmail.com',
+    starTitle: 'ضعوا نجمة على GitHub',
+    starSub: 'لفتة مجانية تساعد كثيراً على ظهور المشروع ✨',
+    starBtn: 'نجمة على GitHub',
+    starCount: 'نجوم',
   },
   zh: {
     heroSub: '你的避孕环追踪伴侣，\n简单又安心。',
@@ -321,6 +349,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: '发送',
     feedbackThanks: '谢谢！留言已收到。 💜',
     feedbackError: '出错了，请重试或直接写信到 alex.guennad@gmail.com',
+    starTitle: '在 GitHub 上点个星',
+    starSub: '一个免费的举动，能极大帮助项目的可见度 ✨',
+    starBtn: 'GitHub Star',
+    starCount: '颗星',
   },
   ja: {
     heroSub: 'あなたの避妊リングを追跡するパートナー、\nシンプルで安心。',
@@ -359,6 +391,10 @@ const i18n: Record<LangCode, Record<string, string>> = {
     feedbackSend: '送信',
     feedbackThanks: 'ありがとう！メッセージを受け取りました。 💜',
     feedbackError: 'エラーが発生しました。再度お試しいただくか、alex.guennad@gmail.com まで直接ご連絡ください。',
+    starTitle: 'GitHub でスターを',
+    starSub: 'プロジェクトの認知度向上に大きく貢献する無料のサポートです ✨',
+    starBtn: 'GitHub でスター',
+    starCount: '個',
   },
 };
 
@@ -474,6 +510,58 @@ function DownloadCounter({ label }: { label: string }) {
       <span className="counter-num">{count.toLocaleString()}</span>
       <span className="counter-label">{label}</span>
     </motion.div>
+  );
+}
+
+// ─── GitHub Star Section ───
+type StarKeys = 'starTitle' | 'starSub' | 'starBtn' | 'starCount';
+
+function StarSection({ t }: { t: (k: StarKeys) => string }) {
+  const [stars, setStars] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('https://api.github.com/repos/Alex-Lou/OrringLanding')
+      .then(r => r.json())
+      .then(data => {
+        if (typeof data.stargazers_count === 'number') setStars(data.stargazers_count);
+      })
+      .catch(() => { /* silent */ });
+  }, []);
+
+  return (
+    <section className="star-section">
+      <motion.div className="star-card"
+        initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+      >
+        <div className="star-icon-wrap">
+          <motion.span
+            className="star-big-icon"
+            animate={{ rotate: [0, -15, 15, -10, 10, 0], scale: [1, 1.1, 1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
+          >
+            ⭐
+          </motion.span>
+        </div>
+        <h2 className="star-title">{t('starTitle')}</h2>
+        <p className="star-sub">{t('starSub')}</p>
+        <motion.a
+          href="https://github.com/Alex-Lou/OrringLanding"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="star-btn"
+          whileHover={{ scale: 1.04, boxShadow: '0 8px 30px rgba(255,215,90,0.4)' }}
+          whileTap={{ scale: 0.97 }}
+        >
+          <span>⭐</span>
+          <span>{t('starBtn')}</span>
+          {stars !== null && (
+            <span className="star-count-pill">
+              {stars.toLocaleString()} {t('starCount')}
+            </span>
+          )}
+        </motion.a>
+      </motion.div>
+    </section>
   );
 }
 
@@ -701,6 +789,9 @@ function App() {
           </motion.a>
         </motion.div>
       </section>
+
+      {/* GitHub Star */}
+      <StarSection t={t as (k: StarKeys) => string} />
 
       {/* Feedback */}
       <FeedbackForm t={t as (k: FeedbackKeys) => string} />
