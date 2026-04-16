@@ -7,6 +7,7 @@ const LANGS = [
   { code: 'fr', flag: '🇫🇷', label: 'FR' },
   { code: 'en', flag: '🇬🇧', label: 'EN' },
   { code: 'nl', flag: '🇳🇱', label: 'NL' },
+  { code: 'ru', flag: '🇷🇺', label: 'RU' },
   { code: 'es', flag: '🇪🇸', label: 'ES' },
   { code: 'pt', flag: '🇧🇷', label: 'PT' },
   { code: 'de', flag: '🇩🇪', label: 'DE' },
@@ -46,6 +47,18 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: "Si le téléphone propose un scan, accepte ou ignore — l'app est 100% sûre",
     installStep4: 'Installe et profite !',
     installNote: "Le code source est ouvert et vérifiable. Aucune donnée n'est collectée ni envoyée.",
+    installSourceLink: 'Voir le code source ici',
+    // Explanations section
+    expTitle: 'Comprendre',
+    expSub: 'Quelques infos utiles pour mieux comprendre',
+    exp1Title: 'Le cycle menstruel',
+    exp1Body: "Le cycle menstruel dure en moyenne 28 jours, mais il peut varier de 21 à 35 jours selon les personnes. Il commence au premier jour des règles et se termine la veille des règles suivantes.\n\nIl comporte 4 grandes phases : les règles (J1–J5), la phase folliculaire (J1–J14), l'ovulation (autour de J14), et la phase lutéale (J15–J28).\n\nSous contraception hormonale, ce cycle naturel est remplacé par un cycle artificiel de 28 jours : 21 jours d'hormones, puis 7 jours de pause pendant lesquels des saignements de privation apparaissent.",
+    exp2Title: "L'anneau contraceptif en détail",
+    exp2Body: "L'anneau vaginal (NuvaRing, Etoring, Setlona...) est un petit anneau souple et transparent d'environ 5 cm qui se place dans le vagin pendant 21 jours, puis se retire pendant 7 jours.\n\n💊 Hormones : il libère en continu une faible dose d'œstrogène (15 µg/jour) et de progestatif (120 µg/jour). Dose plus stable qu'une pilule car elle ne passe pas par le foie.\n\n⏱️ Retard d'insertion : moins de 3h = pas d'impact ; 3 à 48h = utiliser un préservatif 7 jours ; plus de 48h = consulter un·e pro de santé.\n\n⏱️ Retrait temporaire : l'anneau peut être retiré jusqu'à 3 heures (douche, rapport, gêne) sans perdre en efficacité. L'app Orring intègre un mini-minuteur de 3h pour te le rappeler gentiment !\n\n⚠️ Info générale. En cas de doute, consulte un·e médecin ou sage-femme.",
+    exp3Title: 'Les moyens de contraception',
+    exp3Body: "Il existe de nombreuses méthodes, adaptées à différents besoins et corps.\n\n🟣 Pour les personnes avec un utérus : pilule, anneau vaginal, patch, implant, injection, stérilet cuivre, préservatif interne, diaphragme, méthodes d'observation du cycle, ligature des trompes.\n\n🔵 Pour les personnes avec un pénis : préservatif externe, contraception thermique, vasectomie.\n\n💛 La contraception, c'est avant tout une affaire de besoins, d'histoire personnelle et de corps. Chaque parcours est unique — le mieux reste d'en parler avec un·e professionnel·le de santé bienveillant·e qui saura t'écouter sans jugement.",
+    exp4Title: "Les rubriques d'Orring",
+    exp4Body: "🏠 Accueil : tableau de bord avec l'état de l'anneau, dates clés, action suivante + mini-minuteur en cas de retrait temporaire.\n\n💠 Mon Cycle : vue détaillée avec anneau animé et suivi des règles.\n\n📅 Calendrier : 12 mois en un coup d'œil avec codes couleur. Tape un jour pour ajouter des notes.\n\n🕐 Historique : tous tes cycles passés, en cours et à venir.\n\n⚙️ Réglages : date de référence, notifications, mode sombre, langue, nom.\n\n💡 Explications : contexte sur le cycle et la contraception.",
     downloadsCount: 'téléchargements',
     feedbackTitle: 'Laisse-nous un message',
     feedbackSub: 'Suggestion, retour, ou simple mot de soutien — on lit tout. 💌',
@@ -94,6 +107,17 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: "If your phone offers a scan, accept or skip — the app is 100% safe",
     installStep4: 'Install and enjoy!',
     installNote: 'The source code is open and verifiable. No data is collected or sent.',
+    installSourceLink: 'See the source code here',
+    expTitle: 'Understand',
+    expSub: 'Some useful info to better understand',
+    exp1Title: 'The menstrual cycle',
+    exp1Body: "The menstrual cycle lasts 28 days on average but can range from 21 to 35. It has 4 phases: menstruation (day 1–5), follicular phase (day 1–14), ovulation (~day 14), luteal phase (day 15–28).\n\nWith hormonal contraception, this natural cycle is replaced by an artificial 28-day cycle: 21 days of hormones, then 7 hormone-free days during which withdrawal bleeding appears.",
+    exp2Title: 'The vaginal ring in detail',
+    exp2Body: "The vaginal ring (NuvaRing, Etoring, Setlona...) is a small soft transparent ring, about 5 cm wide. It's placed in the vagina for 21 days, then removed for 7 days.\n\n💊 Hormones: continuously releases a low dose of estrogen (15 µg/day) and progestin (120 µg/day). More stable than the pill since it doesn't go through the liver.\n\n⏱️ Late insertion: less than 3h = no impact; 3 to 48h = use a condom for 7 days; more than 48h = talk to a healthcare provider.\n\n⏱️ Temporary removal: the ring can stay out up to 3 hours (shower, sex, discomfort) without losing effectiveness. Orring even has a built-in 3h countdown to gently remind you!\n\n⚠️ General info. When in doubt, talk to a doctor or midwife.",
+    exp3Title: 'Contraceptive methods',
+    exp3Body: "Many methods exist, suited to different needs and bodies.\n\n🟣 For people with a uterus: pill, vaginal ring, patch, implant, injection, copper IUD, internal condom, diaphragm, cycle-tracking, tubal ligation.\n\n🔵 For people with a penis: external condom, thermal contraception, vasectomy.\n\n💛 Contraception is deeply personal — it depends on your needs, history and body. Every path is unique. The best step is to talk with a caring healthcare provider who will listen without judgment.",
+    exp4Title: 'Orring sections',
+    exp4Body: "🏠 Home: dashboard with ring status, key dates, next action + mini 3h timer for temporary removals.\n\n💠 My Cycle: detailed view with animated ring and period tracking.\n\n📅 Calendar: 12 months at a glance with color codes. Tap a day to add notes.\n\n🕐 History: all your past, current and upcoming cycles.\n\n⚙️ Settings: reference date, notifications, dark mode, language, name.\n\n💡 Explanations: context on cycles and contraception.",
     downloadsCount: 'downloads',
     feedbackTitle: 'Leave a message',
     feedbackSub: 'Suggestion, feedback, or a kind word — we read everything. 💌',
@@ -142,6 +166,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Als je telefoon een scan aanbiedt, accepteer of sla over — de app is 100% veilig',
     installStep4: 'Installeer en geniet!',
     installNote: 'De broncode is open en verifieerbaar. Er worden geen gegevens verzameld of verzonden.',
+    installSourceLink: 'Bekijk de broncode hier',
+    expTitle: 'Begrijpen',
+    expSub: 'Wat nuttige info om beter te begrijpen',
+    exp1Title: 'De menstruatiecyclus',
+    exp2Title: 'De vaginale ring in detail',
+    exp3Title: 'Anticonceptiemethoden',
+    exp4Title: 'Rubrieken van Orring',
     downloadsCount: 'downloads',
     feedbackTitle: 'Laat een bericht achter',
     feedbackSub: 'Suggestie, feedback of een vriendelijk woord — we lezen alles. 💌',
@@ -161,6 +192,65 @@ const i18n: Record<LangCode, Record<string, string>> = {
     shareMsg: 'Hé, ik heb Orring gevonden — een gratis app om de anticonceptiering bij te houden. Geen reclame, geen account: https://alex-lou.github.io/OrringLanding/',
     copyLink: 'Link kopiëren',
     copied: 'Link gekopieerd ✓',
+  },
+  ru: {
+    heroSub: 'Твой спокойный спутник для отслеживания\nконтрацептивного кольца, просто и без стресса.',
+    download: 'Скачать бесплатно',
+    hint: 'Android • 100% бесплатно • Без рекламы • Без аккаунта',
+    featuresTitle: 'Всё, что нужно, и ничего лишнего',
+    f1t: 'Умные напоминания', f1d: 'Уведомления за 7 дней, за 1 день и в день X, чтобы никогда не забыть установку или снятие.',
+    f2t: 'Визуальный календарь', f2d: '12 месяцев сразу с цветовыми кодами. Нажми на день, чтобы добавить заметку.',
+    f3t: 'Отслеживание цикла', f3d: 'Анимированное кольцо с обратным отсчётом, отслеживание менструации и полная история циклов.',
+    f4t: 'Приватно и локально', f4d: 'Никаких данных не отправляется. Всё остаётся на твоём телефоне. Без аккаунта, без сервера.',
+    f5t: 'Чистый интерфейс', f5d: 'Нежный дизайн, плавные анимации и интуитивная навигация — только самое важное.',
+    f6t: '100% бесплатно', f6d: 'Без рекламы, без встроенных покупок, без подписки. Инструмент просто в подарок.',
+    howTitle: 'Как это работает',
+    s1t: 'Установи', s1d: 'Скачай APK и установи его на Android.',
+    s2t: 'Настрой', s2d: 'Укажи дату установки кольца — сегодня или более раннюю.',
+    s3t: 'Вот и всё!', s3d: 'Orring считает всё: снятие, пауза, следующая установка. Напоминания приходят автоматически.',
+    ctaTitle: 'Готова упростить отслеживание?',
+    ctaSub: 'Orring — личный проект, сделанный с заботой.\nБесплатно навсегда, без рекламы, без трекинга.',
+    ctaBtn: 'Скачать Orring',
+    footer: 'Сделано с ❤️',
+    footerSub: 'Данные не собираются • 100% локально',
+    toast: 'Спасибо за доверие! Загрузка началась — проверь уведомления или папку «Загрузки». 💜',
+    installTitle: 'Простая установка',
+    installP1: 'Поскольку Orring нет в Play Store, Android показывает предупреждение безопасности — это нормально для любого приложения, скачанного напрямую.',
+    installStep1: 'Открой скачанный файл',
+    installStep2: 'Разреши установку из этого источника',
+    installStep3: 'Если телефон предложит сканирование — согласись или пропусти, приложение 100% безопасно',
+    installStep4: 'Установи и пользуйся!',
+    installNote: 'Исходный код открыт и проверяем. Никакие данные не собираются и не отправляются.',
+    installSourceLink: 'Посмотреть исходный код здесь',
+    expTitle: 'Разобраться',
+    expSub: 'Полезная информация для лучшего понимания',
+    exp1Title: 'Менструальный цикл',
+    exp1Body: 'Менструальный цикл длится в среднем 28 дней, но может варьироваться от 21 до 35 дней. В нём 4 фазы: менструация (дни 1–5), фолликулярная фаза (дни 1–14), овуляция (около 14-го дня), лютеиновая фаза (дни 15–28).\n\nПод гормональной контрацепцией этот естественный цикл заменяется искусственным 28-дневным циклом: 21 день гормонов, затем 7 дней без гормонов, во время которых появляются кровотечения отмены.',
+    exp2Title: 'Вагинальное кольцо подробно',
+    exp2Body: 'Вагинальное кольцо (NuvaRing, Etoring, Setlona...) — маленькое мягкое прозрачное кольцо около 5 см. Устанавливается во влагалище на 21 день, затем снимается на 7 дней.\n\n💊 Гормоны: непрерывно выделяет низкую дозу эстрогена (15 мкг/день) и прогестина (120 мкг/день). Доза стабильнее, чем у таблетки, так как не проходит через печень.\n\n⏱️ Задержка установки: менее 3ч = без влияния; 3–48ч = использовать презерватив 7 дней; более 48ч = обратиться к специалисту.\n\n⏱️ Временное снятие: кольцо можно снимать до 3 часов (душ, близость, дискомфорт) без потери эффективности. В Orring есть мини-таймер на 3ч, чтобы мягко напомнить тебе!\n\n⚠️ Общая информация. В случае сомнений проконсультируйся с врачом или акушеркой.',
+    exp3Title: 'Методы контрацепции',
+    exp3Body: 'Существует множество методов, подходящих для разных потребностей и тел.\n\n🟣 Для людей с маткой: таблетки, вагинальное кольцо, пластырь, имплант, инъекция, медная спираль, внутренний презерватив, диафрагма, методы наблюдения цикла, перевязка труб.\n\n🔵 Для людей с пенисом: внешний презерватив, термическая контрацепция, вазэктомия.\n\n💛 Контрацепция — это прежде всего вопрос потребностей, личной истории и тела. Каждый путь уникален. Лучше всего поговорить с внимательным специалистом, который выслушает без осуждения.',
+    exp4Title: 'Разделы Orring',
+    exp4Body: '🏠 Главная: панель с состоянием кольца, ключевыми датами, следующим действием + мини-таймер на 3ч для временного снятия.\n\n💠 Мой цикл: детальный вид с анимированным кольцом и отслеживанием менструации.\n\n📅 Календарь: 12 месяцев сразу с цветовыми кодами. Нажми на день, чтобы добавить заметку.\n\n🕐 История: все прошлые, текущие и предстоящие циклы.\n\n⚙️ Настройки: дата начала, уведомления, тёмная тема, язык, имя.\n\n💡 Пояснения: контекст о цикле и контрацепции.',
+    downloadsCount: 'загрузок',
+    feedbackTitle: 'Оставь сообщение',
+    feedbackSub: 'Предложение, отзыв или доброе слово — мы всё читаем. 💌',
+    feedbackName: 'Имя или никнейм (необязательно)',
+    feedbackEmail: 'Email (необязательно, для ответа)',
+    feedbackMessage: 'Твоё сообщение...',
+    feedbackSend: 'Отправить',
+    feedbackThanks: 'Спасибо! Сообщение получено. 💜',
+    feedbackError: 'Упс, что-то пошло не так. Попробуй ещё раз или напиши на alex.guennad@gmail.com',
+    supportTitle: 'Поддержать Orring',
+    supportSub: 'Несколько простых способов помочь проекту расти',
+    likeBtn: 'Нравится',
+    likeSub: 'Оставь сердечко, это очень приятно',
+    starLabel: 'Для тех, у кого есть аккаунт GitHub',
+    starBtn: 'Звезда на GitHub',
+    shareTitle: 'Поделиться с подругой',
+    shareMsg: 'Привет, я нашла Orring — бесплатное приложение для отслеживания контрацептивного кольца. Без рекламы, без аккаунта: https://alex-lou.github.io/OrringLanding/',
+    copyLink: 'Скопировать ссылку',
+    copied: 'Ссылка скопирована ✓',
   },
   es: {
     heroSub: 'Tu compañera para seguir tu anillo anticonceptivo,\nde forma sencilla y con tranquilidad.',
@@ -190,6 +280,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Si tu teléfono ofrece un escaneo, acepta u omite — la app es 100% segura',
     installStep4: '¡Instala y disfruta!',
     installNote: 'El código fuente es abierto y verificable. No se recopila ni envía ningún dato.',
+    installSourceLink: 'Ver el código fuente aquí',
+    expTitle: 'Comprender',
+    expSub: 'Algo de información útil para comprender mejor',
+    exp1Title: 'El ciclo menstrual',
+    exp2Title: 'El anillo vaginal en detalle',
+    exp3Title: 'Métodos anticonceptivos',
+    exp4Title: 'Secciones de Orring',
     downloadsCount: 'descargas',
     feedbackTitle: 'Déjanos un mensaje',
     feedbackSub: 'Sugerencia, comentario o una palabra amable — leemos todo. 💌',
@@ -238,6 +335,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Se seu celular oferecer um scan, aceite ou pule — o app é 100% seguro',
     installStep4: 'Instale e aproveite!',
     installNote: 'O código-fonte é aberto e verificável. Nenhum dado é coletado ou enviado.',
+    installSourceLink: 'Ver o código-fonte aqui',
+    expTitle: 'Entender',
+    expSub: 'Algumas informações úteis para entender melhor',
+    exp1Title: 'O ciclo menstrual',
+    exp2Title: 'O anel vaginal em detalhe',
+    exp3Title: 'Métodos contraceptivos',
+    exp4Title: 'Seções do Orring',
     downloadsCount: 'downloads',
     feedbackTitle: 'Deixe uma mensagem',
     feedbackSub: 'Sugestão, feedback ou uma palavra gentil — lemos tudo. 💌',
@@ -286,6 +390,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'Wenn dein Handy einen Scan anbietet, akzeptiere oder überspringe — die App ist 100% sicher',
     installStep4: 'Installiere und genieße!',
     installNote: 'Der Quellcode ist offen und überprüfbar. Es werden keine Daten gesammelt oder gesendet.',
+    installSourceLink: 'Quellcode hier ansehen',
+    expTitle: 'Verstehen',
+    expSub: 'Einige nützliche Infos zum besseren Verständnis',
+    exp1Title: 'Der Menstruationszyklus',
+    exp2Title: 'Der Vaginalring im Detail',
+    exp3Title: 'Verhütungsmethoden',
+    exp4Title: 'Bereiche von Orring',
     downloadsCount: 'Downloads',
     feedbackTitle: 'Hinterlasse eine Nachricht',
     feedbackSub: 'Vorschlag, Feedback oder ein nettes Wort — wir lesen alles. 💌',
@@ -334,6 +445,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'إذا عرض هاتفك فحصاً، اقبلي أو تخطي — التطبيق آمن 100%',
     installStep4: 'ثبّتي واستمتعي!',
     installNote: 'الكود المصدري مفتوح وقابل للتحقق. لا يتم جمع أو إرسال أي بيانات.',
+    installSourceLink: 'اطّلعي على الكود المصدري هنا',
+    expTitle: 'لفهم أفضل',
+    expSub: 'بعض المعلومات المفيدة لفهم أفضل',
+    exp1Title: 'الدورة الشهرية',
+    exp2Title: 'الحلقة المهبلية بالتفصيل',
+    exp3Title: 'وسائل منع الحمل',
+    exp4Title: 'أقسام Orring',
     downloadsCount: 'تنزيلات',
     feedbackTitle: 'اتركوا لنا رسالة',
     feedbackSub: 'اقتراح، تعليق، أو كلمة لطيفة — نقرأ كل شيء. 💌',
@@ -382,6 +500,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: '如果手机提供扫描，接受或跳过——应用100%安全',
     installStep4: '安装并享受！',
     installNote: '源代码开放可验证。不收集或发送任何数据。',
+    installSourceLink: '在此查看源代码',
+    expTitle: '了解',
+    expSub: '一些有用的信息帮助更好地理解',
+    exp1Title: '月经周期',
+    exp2Title: '避孕环详情',
+    exp3Title: '避孕方法',
+    exp4Title: 'Orring 的各部分',
     downloadsCount: '次下载',
     feedbackTitle: '给我们留言',
     feedbackSub: '建议、反馈或温暖的话 — 我们都会阅读。 💌',
@@ -430,6 +555,13 @@ const i18n: Record<LangCode, Record<string, string>> = {
     installStep3: 'スマホがスキャンを提案したら、承認またはスキップ——アプリは100%安全',
     installStep4: 'インストールして楽しむ！',
     installNote: 'ソースコードは公開・検証可能。データの収集・送信は一切ありません。',
+    installSourceLink: 'ソースコードをこちらで確認',
+    expTitle: '理解する',
+    expSub: 'よりよく理解するための役立つ情報',
+    exp1Title: '月経周期',
+    exp2Title: '避妊リングの詳細',
+    exp3Title: '避妊方法',
+    exp4Title: 'Orring のセクション',
     downloadsCount: 'ダウンロード',
     feedbackTitle: 'メッセージをどうぞ',
     feedbackSub: '提案、フィードバック、または温かい言葉 — すべて読みます。 💌',
@@ -829,6 +961,81 @@ function FeedbackForm({ t }: { t: (k: FeedbackKeys) => string }) {
   );
 }
 
+// ─── Explanations Section ───
+type ExpKeys = 'expTitle' | 'expSub' | 'exp1Title' | 'exp1Body' | 'exp2Title' | 'exp2Body' | 'exp3Title' | 'exp3Body' | 'exp4Title' | 'exp4Body';
+
+function ExplanationsSection({ t }: { t: (k: ExpKeys) => string }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const sections = [
+    { emoji: '🌙', tk: 'exp1Title' as const, bk: 'exp1Body' as const },
+    { emoji: '💠', tk: 'exp2Title' as const, bk: 'exp2Body' as const },
+    { emoji: '🌸', tk: 'exp3Title' as const, bk: 'exp3Body' as const },
+    { emoji: '💡', tk: 'exp4Title' as const, bk: 'exp4Body' as const },
+  ];
+
+  return (
+    <section className="explanations-section">
+      <motion.h2
+        className="section-title"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        📖 {t('expTitle')}
+      </motion.h2>
+      <motion.p
+        className="explanations-sub"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        {t('expSub')}
+      </motion.p>
+
+      <div className="explanations-cards">
+        {sections.map((s, i) => {
+          const isOpen = openIndex === i;
+          return (
+            <motion.div
+              key={i}
+              className={`exp-card ${isOpen ? 'open' : ''}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+            >
+              <button
+                className="exp-header"
+                onClick={() => setOpenIndex(isOpen ? null : i)}
+              >
+                <span className="exp-emoji">{s.emoji}</span>
+                <span className="exp-title">{t(s.tk)}</span>
+                <span className="exp-chevron">{isOpen ? '▼' : '▶'}</span>
+              </button>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    className="exp-body"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  >
+                    <p>{t(s.bk)}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 // ─── App ───
 function App() {
   const [lang, setLang] = useState<LangCode>(() => detectLang());
@@ -965,9 +1172,23 @@ function App() {
               </motion.div>
             ))}
           </div>
-          <p className="install-note">🔒 {t('installNote')}</p>
+          <p className="install-note">
+            🔒 {t('installNote')}{' '}
+            <a
+              href="https://github.com/Alex-Lou/OrringLanding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="install-source-link"
+            >
+              {t('installSourceLink')}
+            </a>
+            .
+          </p>
         </motion.div>
       </section>
+
+      {/* Explanations */}
+      <ExplanationsSection t={t as (k: ExpKeys) => string} />
 
       {/* CTA */}
       <section className="cta">
