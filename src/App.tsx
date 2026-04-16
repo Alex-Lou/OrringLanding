@@ -590,18 +590,20 @@ function useT(lang: LangCode) {
 }
 
 // ─── Animations ───
+const EASE_OUT_QUINT = [0.22, 1, 0.36, 1] as const;
+
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+    transition: { delay: i * 0.15, duration: 0.7, ease: EASE_OUT_QUINT }
   }),
-};
+} as const;
 
 const fadeIn = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } },
-};
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' as const } },
+} as const;
 
 const base = import.meta.env.BASE_URL;
 
@@ -1027,7 +1029,7 @@ function ExplanationsSection({ t }: { t: (k: ExpKeys) => string }) {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' as const }}
                   >
                     <p>{t(s.bk)}</p>
                   </motion.div>
@@ -1334,7 +1336,7 @@ function App() {
         <motion.div className="hero-ring"
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, ease: EASE_OUT_QUINT }}
         >
           <img src={`${base}orring-logo.png`} alt="Orring" className="hero-logo" />
         </motion.div>
@@ -1347,7 +1349,7 @@ function App() {
           {t('heroSub').split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}
         </motion.p>
 
-        <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.0.0/Orring.apk"} download onClick={handleDownload} className="download-btn"
+        <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.1.2/Orring.apk"} download onClick={handleDownload} className="download-btn"
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.6 }}
           whileHover={{ scale: 1.05, boxShadow: '0 8px 40px rgba(166,151,217,0.4)' }}
           whileTap={{ scale: 0.97 }}
@@ -1459,7 +1461,7 @@ function App() {
           <img src={`${base}orring-logo.png`} alt="Orring" className="cta-logo" />
           <h2>{t('ctaTitle')}</h2>
           <p>{t('ctaSub').split('\n').map((line, i) => <span key={i}>{line}{i === 0 && <br />}</span>)}</p>
-          <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.0.0/Orring.apk"} download onClick={handleDownload} className="download-btn cta-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          <motion.a href={"https://github.com/Alex-Lou/OrringLanding/releases/download/v2.1.2/Orring.apk"} download onClick={handleDownload} className="download-btn cta-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             📲 {t('ctaBtn')}
           </motion.a>
         </motion.div>
