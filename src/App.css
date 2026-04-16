@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
 
 :root {
   --pink: #A697D9;
@@ -85,6 +85,7 @@ body {
 }
 
 .hero-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
   background: linear-gradient(135deg, var(--pink-dark), var(--pink), #c9a0dc);
@@ -150,12 +151,22 @@ body {
 
 /* ── Section commons ── */
 .section-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
   text-align: center;
   margin-bottom: 3rem;
   color: var(--text);
   letter-spacing: -1px;
+}
+
+.step h3,
+.cta-card h2,
+.share-heading,
+.exp-title,
+.feedback-section .section-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  letter-spacing: -0.3px;
 }
 
 /* ── Features ── */
@@ -185,15 +196,37 @@ body {
   border-color: var(--pink-light);
 }
 
+/* Ancien span emoji (conservé pour compat) */
 .feature-icon {
   font-size: 2.2rem;
   display: block;
   margin-bottom: 1rem;
 }
 
+/* Badge pervenche avec SVG à l'intérieur */
+.feature-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--pink-soft), var(--pink-light));
+  color: var(--pink-dark);
+  margin-bottom: 1.1rem;
+  box-shadow: inset 0 0 0 1px rgba(166,151,217,0.15);
+}
+.feature-icon-wrap svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
 .feature-card h3 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
+  letter-spacing: -0.2px;
   margin-bottom: 0.5rem;
   color: var(--text);
 }
