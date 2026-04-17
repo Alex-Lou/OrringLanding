@@ -1,21 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
-
-:root {
-  --pink: #A697D9;
-  --pink-dark: #7F6EBA;
-  --pink-light: #D9D0EC;
-  --pink-soft: #F4F0FA;
-  --bg: #FCFBFE;
-  --text: #2D2A3A;
-  --text-sec: #8B8696;
-  --surface: #FFFFFF;
-  --border: #ECE7F1;
-}
+@import './styles/tokens.css';
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: var(--font-sans);
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -40,7 +29,7 @@ body {
   position: absolute;
   bottom: -10px;
   background: var(--pink);
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: float-up linear infinite;
 }
 
@@ -72,20 +61,20 @@ body {
 .hero-logo {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
 }
 
 .cta-logo {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
   margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
   background: linear-gradient(135deg, var(--pink-dark), var(--pink), #c9a0dc);
@@ -114,7 +103,7 @@ body {
   color: white;
   font-size: 1.1rem;
   font-weight: 700;
-  border-radius: 60px;
+  border-radius: var(--radius-cta);
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(166,151,217,0.3);
   transition: box-shadow 0.3s ease;
@@ -151,7 +140,7 @@ body {
 
 /* ── Section commons ── */
 .section-title {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
   text-align: center;
@@ -165,7 +154,7 @@ body {
 .share-heading,
 .exp-title,
 .feedback-section .section-title {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: var(--font-display);
   letter-spacing: -0.3px;
 }
 
@@ -187,7 +176,7 @@ body {
 .feature-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-md);
   padding: 2rem;
   transition: all 0.3s ease;
 }
@@ -223,7 +212,7 @@ body {
 }
 
 .feature-card h3 {
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.2px;
@@ -264,7 +253,7 @@ body {
 .step-number {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: linear-gradient(135deg, var(--pink), var(--pink-dark));
   color: white;
   font-size: 1.5rem;
@@ -303,7 +292,7 @@ body {
   text-align: center;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 28px;
+  border-radius: var(--radius-xl);
   padding: 3.5rem 3rem;
   max-width: 550px;
   width: 100%;
@@ -354,13 +343,13 @@ body {
   gap: 0.5rem;
   margin-top: 1rem;
   padding: 0.45rem 1rem;
-  background: rgba(255,255,255,0.75);
+  background: var(--frosted-medium);
   backdrop-filter: blur(10px);
   border: 1px solid var(--pink-light);
-  border-radius: 40px;
+  border-radius: var(--radius-pill);
   font-size: 0.85rem;
   color: var(--text-sec);
-  box-shadow: 0 2px 10px rgba(166,151,217,0.15);
+  box-shadow: var(--shadow-xs);
 }
 
 .counter-icon {
@@ -423,7 +412,7 @@ body {
   align-items: center;
   padding: 0.2rem 0.55rem;
   background: rgba(0,0,0,0.06);
-  border-radius: 20px;
+  border-radius: var(--radius-md);
   font-size: 0.78rem;
   font-weight: 700;
   margin-left: 0.3rem;
@@ -436,7 +425,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.3rem;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid var(--pink-light);
   border-radius: 50px;
   font-size: 0.95rem;
@@ -479,7 +468,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.3rem;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid #FFE17A;
   border-radius: 50px;
   font-size: 0.95rem;
@@ -528,9 +517,9 @@ body {
   align-items: center;
   gap: 0.45rem;
   padding: 0.6rem 1rem;
-  background: white;
+  background: var(--surface);
   border: 1.5px solid var(--border);
-  border-radius: 40px;
+  border-radius: var(--radius-pill);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
@@ -601,7 +590,7 @@ body {
   gap: 0.9rem;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   padding: 2rem;
   box-shadow: 0 4px 24px rgba(166,151,217,0.1);
 }
@@ -612,7 +601,7 @@ body {
   padding: 0.85rem 1rem;
   background: var(--bg);
   border: 1.5px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-sm);
   font-size: 0.95rem;
   font-family: inherit;
   color: var(--text);
@@ -641,7 +630,7 @@ body {
   font-size: 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 40px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(166,151,217,0.3);
   font-family: inherit;
@@ -707,7 +696,7 @@ body {
 .install-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   padding: 2.5rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
@@ -740,7 +729,7 @@ body {
   flex-shrink: 0;
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--pink-light);
   color: var(--pink-dark);
   font-weight: 700;
@@ -766,6 +755,47 @@ body {
   z-index: 100;
 }
 
+/* ── Theme toggle (top-left pill) ───────────────────────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.5rem;
+  z-index: 100;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--frosted-medium);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 42px;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xs);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.05);
+  border-color: var(--pink);
+  box-shadow: var(--shadow-sm);
+}
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+.theme-toggle-icon {
+  display: inline-block;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* RTL : toggle bascule à droite, lang-selector à gauche pour rester cohérents */
+[dir="rtl"] .theme-toggle { left: auto; right: 1.5rem; }
+[dir="rtl"] .lang-selector { right: auto; left: 1.5rem; }
+
 [dir="rtl"] .lang-selector {
   right: auto;
   left: 1.5rem;
@@ -776,10 +806,10 @@ body {
   align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 1rem;
-  background: rgba(255,255,255,0.85);
+  background: var(--frosted-medium);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: 40px;
+  border-radius: var(--radius-pill);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text);
@@ -803,7 +833,7 @@ body {
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
@@ -899,16 +929,15 @@ body {
 /* ── Section arrow (bottom of each section) ── */
 /*   Bouton circulaire uniforme, gradient lavande doux, animation breathing */
 .section-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
+  display: block;
   margin: 3rem auto 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: var(--radius-full);
+  line-height: 48px;
+  text-align: center;
   border: none;
-  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(244,240,250,0.95));
+  background: linear-gradient(135deg, var(--frosted-strong), var(--frosted-soft));
   backdrop-filter: blur(10px);
   color: var(--pink-dark);
   cursor: pointer;
@@ -931,10 +960,11 @@ body {
   transform: translateY(2px) scale(0.97);
 }
 .section-arrow-chev {
-  line-height: 1;
+  display: inline-block;
+  line-height: 48px;
   font-weight: 700;
   font-size: 1.35rem;
-  transform: translateY(-2px);
+  vertical-align: middle;
 }
 
 @keyframes section-arrow-breathe {
@@ -963,11 +993,11 @@ body {
   flex-direction: column;
   gap: 0.3rem;
   padding: 0.3rem;
-  background: rgba(255,255,255,0.85);
+  background: var(--frosted-medium);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: 28px;
-  box-shadow: 0 4px 20px rgba(166,151,217,0.12);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xs);
 }
 [dir="rtl"] .nav-arrows {
   right: auto;
@@ -976,7 +1006,7 @@ body {
 .nav-arrow-btn {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: transparent;
   border: none;
   color: var(--pink-dark);
@@ -1151,7 +1181,7 @@ body {
   }
   .features,
   .install-help,
-  .how-it-works > *,
+  .how-it-works,
   .cta,
   .support-section,
   .feedback-section,
