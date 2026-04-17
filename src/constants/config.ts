@@ -3,7 +3,7 @@
  * bump-per-release identifier. Change the version here, everywhere updates.
  */
 
-export const APP_VERSION = 'v2.1.3';
+export const APP_VERSION = 'v2.1.4';
 
 export const SITE_URL = 'https://alex-lou.github.io/OrringLanding/';
 
