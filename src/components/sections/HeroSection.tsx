@@ -17,7 +17,7 @@ export function HeroSection({ t, onDownload }: { t: T; onDownload: () => void })
         animate={{ scale: 1, rotate: 0 }}
         transition={{ duration: 1.2, ease: EASE_OUT_QUINT }}
       >
-        <img src={`${base}orring-logo.png`} alt="Orring" className="hero-logo" />
+        <img src={`${base}LandingIcon.png`} alt="Orring" className="hero-logo" />
       </motion.div>
 
       <motion.h1

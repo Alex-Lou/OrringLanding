@@ -17,7 +17,7 @@ export function CtaSection({ t, onDownload }: { t: T; onDownload: () => void }) 
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <img src={`${base}orring-logo.png`} alt="Orring" className="cta-logo" />
+        <img src={`${base}LandingIcon.png`} alt="Orring" className="cta-logo" />
         <h2>{t('ctaTitle')}</h2>
         <p>
           {t('ctaSub').split('\n').map((line, i) => (
