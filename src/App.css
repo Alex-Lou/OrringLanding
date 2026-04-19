@@ -58,18 +58,20 @@ body {
   filter: drop-shadow(0 4px 20px rgba(166,151,217,0.4));
 }
 
+/* LandingIcon already has its own concentric pastel rings baked in — no need
+ * for an extra border-radius clip that would crop the outer ring. Sized up
+ * from the previous orring-logo (120 / 80 → 200 / 140) so the new artwork
+ * reads at roughly the same visual weight as the old flat logo. */
 .hero-logo {
-  width: 120px;
-  height: 120px;
-  border-radius: var(--radius-full);
-  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
 }
 
 .cta-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: var(--radius-full);
-  object-fit: cover;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
   margin-bottom: 1rem;
 }
 
