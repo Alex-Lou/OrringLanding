@@ -6,13 +6,18 @@ import type { T } from '../../i18n/useI18n';
 
 interface ExpItem {
   emoji: string;
-  tk: 'exp1Title' | 'exp2Title' | 'exp3Title' | 'exp4Title';
-  bk: 'exp1Body' | 'exp2Body' | 'exp3Body' | 'exp4Body';
+  tk: 'exp1Title' | 'exp2Title' | 'exp3Title' | 'exp4Title' | 'exp5Title';
+  bk: 'exp1Body' | 'exp2Body' | 'exp3Body' | 'exp4Body' | 'exp5Body';
 }
 
+// "Mes périodes" was added to the app in v2.6.0 — now surfaced on
+// the landing too, between the ring deep-dive (💠) and the general
+// contraception methods (🌸) so the order reads as "ring → period
+// tracker (the new tab) → other methods → app rubrics".
 const ITEMS: readonly ExpItem[] = [
   { emoji: '🌙', tk: 'exp1Title', bk: 'exp1Body' },
   { emoji: '💠', tk: 'exp2Title', bk: 'exp2Body' },
+  { emoji: '🩸', tk: 'exp5Title', bk: 'exp5Body' },
   { emoji: '🌸', tk: 'exp3Title', bk: 'exp3Body' },
   { emoji: '💡', tk: 'exp4Title', bk: 'exp4Body' },
 ] as const;
