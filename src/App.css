@@ -339,6 +339,14 @@ body {
   opacity: 0.7;
 }
 
+.footer-link {
+  color: var(--pink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.footer-link:hover { border-bottom-color: var(--pink); }
+
 /* ── Download Counter ── */
 .download-counter {
   display: inline-flex;
